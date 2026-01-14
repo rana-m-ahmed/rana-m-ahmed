@@ -210,9 +210,9 @@ Dynamic weather application with real-time data integration and responsive visua
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rana-m-ahmed&show_icons=true&theme=radical&hide_border=true)
+[![GitHub Streak](https://streak-stats.demolab.com?user=rana-m-ahmed&theme=radical&hide_border=true)](https://git.io/streak-stats)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rana-m-ahmed&layout=compact&theme=radical&hide_border=true)
+[![Trophy](https://github-profile-trophy.vercel.app/?username=rana-m-ahmed&theme=radical&no-frame=true&margin-w=4)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 ---
