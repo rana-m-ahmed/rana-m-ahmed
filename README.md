@@ -206,17 +206,6 @@ Dynamic weather application with real-time data integration and responsive visua
 
 ---
 
-## GitHub Statistics
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=rana-m-ahmed&theme=radical&hide_border=true)](https://git.io/streak-stats)
-
-[![Trophy](https://github-profile-trophy.vercel.app/?username=rana-m-ahmed&theme=radical&no-frame=true&margin-w=4)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
----
-
 ## Professional Development
 
 ### Current Learning Path
