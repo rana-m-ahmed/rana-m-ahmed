@@ -1,13 +1,15 @@
+<div align="center">
+
 # Rana Muhammad Ahmed
 
 **Junior Software Developer** | **Computer Science Student** | **Problem Solver**
 
-[![GitHub](https://img.shields.io/badge/GitHub-ranaahmed786-181717?style=flat-square&logo=github)](https://github.com/ranaahmed786)
+[![GitHub](https://img.shields.io/badge/GitHub-rana--m--ahmed-181717?style=flat-square&logo=github)](https://github.com/rana-m-ahmed)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rana--m--ahmed-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/rana-m-ahmed)
 [![Email](https://img.shields.io/badge/Email-ranamuhammadahmed6%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ranamuhammadahmed6@gmail.com)
 [![Location](https://img.shields.io/badge/📍-Rawalpindi,%20Pakistan-28a745?style=flat-square)]()
 
----
+</div>
 
 ## About Me
 
@@ -208,12 +210,11 @@ Dynamic weather application with real-time data integration and responsive visua
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ranaahmed786&show_icons=true&theme=radical&hide_border=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rana-m-ahmed&show_icons=true&theme=radical&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ranaahmed786&layout=compact&theme=radical&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rana-m-ahmed&layout=compact&theme=radical&hide_border=true)
 
 </div>
-
 ---
 
 ## Professional Development
