@@ -4,11 +4,6 @@
 
 **Junior Software Developer** | **Computer Science Student** | **Problem Solver**
 
-[![GitHub](https://img.shields.io/badge/GitHub-rana--m--ahmed-181717?style=flat-square&logo=github)](https://github.com/rana-m-ahmed)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-rana--m--ahmed-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/rana-m-ahmed)
-[![Email](https://img.shields.io/badge/Email-ranamuhammadahmed6%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ranamuhammadahmed6@gmail.com)
-[![Location](https://img.shields.io/badge/📍-Rawalpindi,%20Pakistan-28a745?style=flat-square)]()
-
 </div>
 
 ## About Me
