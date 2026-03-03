@@ -223,12 +223,6 @@ Dynamic weather application with real-time data integration and responsive visua
 
 I'm always interested in discussing technology, collaborating on projects, or exploring new opportunities in software development.
 
-**Contact Information:**
-- 📧 **Email**: [ranamuhammadahmed6@gmail.com](mailto:ranamuhammadahmed6@gmail.com)
-- 💼 **LinkedIn**: [rana-m-ahmed](https://linkedin.com/in/rana-m-ahmed)
-- 🔗 **GitHub**: [rana-m-ahmed](https://github.com/rana-m-ahmed)
-- 📱 **Phone**: +92-336-6607318
-
 ---
 
 <div align="center">
