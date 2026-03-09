@@ -120,17 +120,6 @@ Educational quiz application with dynamic question handling and score tracking.
 
 ---
 
-### 📱 [Wasfa Diagnostics App](https://github.com/rana-m-ahmed/wasfa_diagnostics_app)
-**Healthcare Ecosystem Mobile Application** | *November 2025*
-
-Comprehensive mobile application for the Wasfa Diagnostics healthcare ecosystem.
-
-- **Technologies**: Flutter, Dart
-- **Key Features**: Cross-platform mobile development, Healthcare data management
-- **Impact**: Streamlined healthcare service delivery through mobile technology
-
----
-
 ### 🎹 [ePiano](https://github.com/ranaahmed786/ePiano)
 **Virtual Piano Application** | *June 2024*
 
