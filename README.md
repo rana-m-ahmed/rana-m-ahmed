@@ -360,18 +360,16 @@ class RanaMuhammadAhmed:
 ---
 
 <!-- SNAKE ANIMATION -->
+<!-- SNAKE ANIMATION -->
 ## 🐍 Contribution Snake
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake-dark.svg" />
   </picture>
 </p>
-
-> ⚠️ To enable the snake animation, add [this GitHub Action](https://github.com/Platane/snk) to your profile repo under `.github/workflows/snake.yml`.
-
 ---
 
 <!-- QUOTE -->
