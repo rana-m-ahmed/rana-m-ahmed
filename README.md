@@ -5,7 +5,7 @@
 
 <!-- TYPING SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;Pre-Med+%E2%86%92+CS+%E2%80%94+Best+pivot+I+ever+made" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86" alt="Typing SVG" />
 </p>
 
 <!-- SOCIAL BADGES -->
