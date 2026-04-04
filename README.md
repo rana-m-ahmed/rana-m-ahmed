@@ -5,7 +5,7 @@
 
 <!-- TYPING SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+Security+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;Pre-Med+%E2%86%92+CS+%E2%80%94+Best+pivot+I+ever+made" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;Pre-Med+%E2%86%92+CS+%E2%80%94+Best+pivot+I+ever+made" alt="Typing SVG" />
 </p>
 
 <!-- SOCIAL BADGES -->
@@ -52,7 +52,34 @@ class RanaMuhammadAhmed:
 ```
 
 ---
+<!-- EDUCATION -->
+## 🎓 Education
 
+<table>
+  <tr>
+    <td width="50%">
+      <h3>B.S. Computer Science</h3>
+      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; 2024 – Expected Dec 2027</p>
+      <ul>
+        <li>CGPA: <b>3.9 / 4.0</b></li>
+        <li>Top 10 in CS Department</li>
+        <li>Rector's Honours List — Fall 2025</li>
+        <li>DSA · OOP · DB Systems · Software Engineering · AI · Computer Architecture · Digital Logic Design</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>FSC Pre-Medical</h3>
+      <p><b>Kips College, Rawalpindi</b> &nbsp;|&nbsp; 2021 – 2023</p>
+      <ul>
+        <li>Grade: <b>A1</b></li>
+        <li>Rigorous analytical foundation in sciences</li>
+        <li>Pivoted fully into Computer Science — best decision ever made</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
 <!-- TECH STACK -->
 ## 🛠️ Tech Stack
 
@@ -83,11 +110,6 @@ class RanaMuhammadAhmed:
 
 <!-- GITHUB STATS -->
 ## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rana-m-ahmed&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&border_radius=10&rank_icon=github" height="180" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rana-m-ahmed&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&border_radius=10&langs_count=8" height="180" />
-</p>
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com?user=rana-m-ahmed&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="180" />
@@ -309,35 +331,6 @@ class RanaMuhammadAhmed:
       <h3>⚔️ Competitive Programming Captain</h3>
       <p><b>Team: The Pull Pirates</b> &nbsp;|&nbsp; <i>2024 – Present</i></p>
       <p>Founded the team from scratch. Conduct weekly algorithmic training sessions. Serve dual role as coach and active contestant at ICPC Asia Regional and national-level competitions.</p>
-    </td>
-  </tr>
-</table>
-
----
-
-<!-- EDUCATION -->
-## 🎓 Education
-
-<table>
-  <tr>
-    <td width="50%">
-      <h3>🎓 B.S. Computer Science</h3>
-      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; 2024 – Expected Dec 2027</p>
-      <ul>
-        <li>CGPA: <b>3.9 / 4.0</b></li>
-        <li>Top 10 in CS Department</li>
-        <li>Rector's Honours List — Fall 2025</li>
-        <li>DSA · OOP · DB Systems · Software Engineering · AI · Computer Architecture · Digital Logic Design</li>
-      </ul>
-    </td>
-    <td width="50%">
-      <h3>📚 FSC Pre-Medical</h3>
-      <p><b>Kips College, Rawalpindi</b> &nbsp;|&nbsp; 2021 – 2023</p>
-      <ul>
-        <li>Grade: <b>A1</b></li>
-        <li>Rigorous analytical foundation in sciences</li>
-        <li>Pivoted fully into Computer Science — best decision ever made</li>
-      </ul>
     </td>
   </tr>
 </table>
