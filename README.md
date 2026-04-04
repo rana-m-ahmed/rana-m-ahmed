@@ -1,223 +1,389 @@
-<div align="center">
+<!-- HEADER BANNER -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1a2e,100:16213e&height=200&section=header&text=Rana%20Muhammad%20Ahmed&fontSize=42&fontColor=58a6ff&fontAlignY=38&desc=CS%20Student%20%7C%20Builder%20%7C%20Problem%20Solver&descAlignY=58&descColor=8b949e&animation=fadeIn" width="100%"/>
+</p>
 
-# Rana Muhammad Ahmed
+<!-- TYPING SVG -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+Security+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;Pre-Med+%E2%86%92+CS+%E2%80%94+Best+pivot+I+ever+made" alt="Typing SVG" />
+</p>
 
-**Junior Software Developer** | **Computer Science Student** | **Problem Solver**
+<!-- SOCIAL BADGES -->
+<p align="center">
+  <a href="https://linkedin.com/in/rana-muhammad-ahmed-571057295">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:ranamuhammadahmed6@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://github.com/rana-m-ahmed">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=rana-m-ahmed&color=58a6ff&style=for-the-badge&label=PROFILE+VIEWS" />
+</p>
 
-</div>
+---
 
-## About Me
+<!-- ABOUT ME -->
+## 🧑‍💻 About Me
 
-Passionate Computer Science student with a strong foundation in software development and a keen eye for creating innovative solutions. Currently pursuing my Bachelor's degree at Bahria University with a focus on bridging academic knowledge with real-world applications.
+```python
+class RanaMuhammadAhmed:
+    def __init__(self):
+        self.name       = "Rana Muhammad Ahmed"
+        self.university = "Bahria University Islamabad"
+        self.cgpa       = 3.9
+        self.rank       = "Top 10 in CS Department"
+        self.location   = "Rawalpindi, Pakistan 🇵🇰"
+        self.background = "Pre-Medical → Computer Science"
 
-I thrive on solving complex problems through hands-on, project-based learning and am eager to contribute fresh ideas and technical skills to make meaningful impacts in professional environments.
+    @property
+    def currently(self):
+        return [
+            "🛡️  Building AI security pipelines",
+            "📱  Shipping cross-platform Flutter apps in production",
+            "⚔️  Competing at ICPC Asia Regional level",
+            "🌍  GlobalX Student Ambassador @ Bahria University",
+        ]
 
+    @property
+    def fun_fact(self):
+        return "Was once memorising biology; now building LLM gateways. 🔬 → 💻"
 ```
-🎓 Current CGPA: 3.9/4.0
-
-🌟 Specializing in Desktop, Web & Mobile Application Development
-```
 
 ---
 
-## Technical Stack
+<!-- TECH STACK -->
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=cpp,python,dart,js,html,css,sql&perline=7&theme=dark" />
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=flutter,fastapi,qt,supabase,git,github,vscode,androidstudio,arduino&perline=9&theme=dark" />
+</p>
+
+<br/>
 
 <div align="center">
 
-### Languages & Technologies
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### Frameworks & Tools
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Qt](https://img.shields.io/badge/Qt-41CD52?style=for-the-badge&logo=qt&logoColor=white)
-![SFML](https://img.shields.io/badge/SFML-8CC445?style=for-the-badge&logo=sfml&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
-</div>
-
-<div align="center">
-  
-### Core Competencies
-| **Development** | **Technical Skills** | **Soft Skills** |
-|-----------------|---------------------|------------------|
-| Desktop Applications | Data Structures & Algorithms | Problem Solving |
-| Web Applications | Version Control (Git/GitHub) | Technical Documentation |
-| Mobile Applications (Flutter) | Database Management | Project Management |
-| UI/UX Design | Object-Oriented Programming | Team Collaboration |
-| API Integration | Cross-Platform Development | Adaptive Learning |
+| Domain | Tools |
+|:---:|:---|
+| **Languages** | C++, Python, Dart, JavaScript, HTML5, CSS3, SQL |
+| **Mobile / Cross-Platform** | Flutter, Dart, GoRouter, Flutter Quill, Supabase |
+| **AI / ML / Security** | FastAPI, Microsoft Presidio, Ollama / TinyLlama, spaCy, NLP |
+| **Systems & Embedded** | Qt Widgets, SFML, CMake, Arduino, TinkerCAD, Multithreading |
+| **Developer Tooling** | Git, GitHub, VS Code, Qt Creator, Android Studio |
+| **Core CS** | OOP, Data Structures & Algorithms, System Architecture, Memory Management |
 
 </div>
 
 ---
 
-## Professional Certifications
+<!-- GITHUB STATS -->
+## 📊 GitHub Stats
 
-### 🏆 Coursera Verified Certificates
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=rana-m-ahmed&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&border_radius=10&rank_icon=github" height="180" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rana-m-ahmed&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&border_radius=10&langs_count=8" height="180" />
+</p>
 
-**Flutter and Dart: Developing iOS, Android, and Mobile Apps** | *IBM*
-- [View Certificate](https://coursera.org/share/34154a75461834d0648a8a6e1d23d982)
-- FLutter and Dart Development 
-
-**Mobile App Notifications, Databases, & Publishing** | *SkillUp*
-- [View Certificate](https://coursera.org/share/66fb385195f75b46622acce02328fc56)
-- Foundations of App Notification Pushing , App Puslishing Cycle and Database Design
-
-**Getting started with Flutter Development** | *Google Cloud*
-- [View Certificate](https://coursera.org/share/fe00b10538d0bd8c4166d5c6513cbb73)
-- Basics of Flutter Development and Calibration
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=rana-m-ahmed&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="180" />
+</p>
 
 ---
 
-## Featured Projects
+<!-- TROPHIES -->
+## 🏅 GitHub Trophies
 
-### 🗜️ [Compresso](https://github.com/ranaahmed786/compresso) 
-**Huffman Compression Application** | *May 2025*
-
-A sophisticated folder-based compression tool implementing Canonical Huffman Coding algorithms.
-
-- **Technologies**: C++, Qt Widgets, Advanced Data Structures
-- **Key Features**: Multithreaded processing, Binary I/O operations, GUI design
-- **Impact**: Achieved significant file size reduction through optimized character frequency analysis
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=rana-m-ahmed&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&row=1&column=6" />
+</p>
 
 ---
 
-### 📊 [Flutter Expense Tracker](https://github.com/rana-m-ahmed/flutter_expense_tracker)
-**Personal Finance Management App** | *July 2025*
+<!-- FEATURED PROJECTS -->
+## 🚀 Featured Projects
 
-Intuitive expense tracking application with data visualization and budget management.
+<!-- LLM SECURITY GATEWAY -->
+<details open>
+<summary><b>🛡️ LLM Security Gateway &nbsp;|&nbsp; Python · FastAPI · Microsoft Presidio · Ollama · spaCy &nbsp;|&nbsp; Mar 2026</b></summary>
+<br/>
 
-- **Technologies**: Flutter, Dart
-- **Key Features**: Interactive charts, Category-based tracking, Responsive UI
-- **Innovation**: Real-time expense monitoring with visual analytics
+> An AI security pipeline that intercepts and sanitises LLM prompts **before inference** — blocking jailbreaks, prompt injections, and PII leakage at the source.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Microsoft_Presidio-0078D4?style=flat-square&logo=microsoft&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logoColor=white"/>
+  <img src="https://img.shields.io/badge/spaCy-09A3D5?style=flat-square&logo=spacy&logoColor=white"/>
+</p>
+
+| | |
+|---|---|
+| **Architecture** | 3-stage pipeline: injection detection → PII analysis → policy engine |
+| **PII Coverage** | Custom `PatternRecognizer` + context-aware boosters (+0.18) across **7 entity types** |
+| **Injection Defence** | Dual-tier regex detector — **14 patterns**, 1.12× compound multiplier |
+| **Threshold** | Optimised F1 score at **0.55** threshold |
+| **Inference** | Integrated TinyLlama 1.1B via Ollama; negligible pipeline overhead confirmed |
+
+</details>
+
+<br/>
+
+<!-- WASFA -->
+<details open>
+<summary><b>🏥 Wasfa Diagnostic LMS &nbsp;|&nbsp; Flutter · Supabase · GoRouter · Flutter Quill &nbsp;|&nbsp; 2025–2026</b></summary>
+<br/>
+
+> Cross-platform LMS (web, mobile, desktop) for a live diagnostic centre — currently serving real patients in production.
+
+<p>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Production-Live-brightgreen?style=flat-square"/>
+</p>
+
+| | |
+|---|---|
+| **Scale** | **400+ patient intakes/day** digitised |
+| **Speed Gain** | ~65% reduction in registration time via MRN/name/phone search + auto-fill |
+| **Report Editor** | Flutter Quill + PDF export; clinician turnaround cut to **<5 minutes** |
+| **Auth** | GoRouter + Supabase — **99%+ uptime**, <2 sec median login |
+| **UI** | Material 3, fully responsive across web, mobile, and desktop |
+
+</details>
+
+<br/>
+
+<!-- COMPRESSO -->
+<details open>
+<summary><b>🗜️ <a href="https://github.com/rana-m-ahmed/compresso">Compresso</a> &nbsp;|&nbsp; C++ · Qt Widgets · CMake · Multithreading &nbsp;|&nbsp; May 2025</b></summary>
+<br/>
+
+> Folder-based file compression tool implementing Canonical Huffman Coding — from scratch, no libraries.
+
+<p>
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=qt&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white"/>
+</p>
+
+| | |
+|---|---|
+| **Compression** | **45–60% file size reduction** via optimised character frequency analysis |
+| **Engine** | Multithreaded processing of 100+ files with custom binary format |
+| **Integrity** | Header structures guarantee decompression accuracy |
+
+</details>
+
+<br/>
+
+<!-- EAGLE EYE -->
+<details open>
+<summary><b>📡 Eagle Eye – Proximity Radar &nbsp;|&nbsp; C · Arduino · Processing IDE &nbsp;|&nbsp; Dec 2024</b></summary>
+<br/>
+
+> Hardware-software radar prototype bridging embedded systems with a real-time GUI.
+
+<p>
+  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Processing_IDE-006699?style=flat-square&logoColor=white"/>
+</p>
+
+| | |
+|---|---|
+| **Sensor** | HC-SR04 ultrasonic + 180° servo motor |
+| **Interface** | Real-time radar GUI via Processing IDE over serial at 9600 baud |
+| **Alert System** | 4-band proximity zones (LEDs + buzzers at <10, 10–20, 20–40, >40 cm) |
+
+</details>
+
+<br/>
+
+<!-- EPIANO -->
+<details open>
+<summary><b>🎹 <a href="https://github.com/rana-m-ahmed/ePiano">ePiano</a> &nbsp;|&nbsp; C++ · SFML &nbsp;|&nbsp; Jun 2024</b></summary>
+<br/>
+
+> Real-time virtual piano simulator with audio synthesis across 4 octaves and 48 keys.
+
+<p>
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SFML-8CC445?style=flat-square&logo=sfml&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Downloads-200+-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Rating-4.2%2F5-yellow?style=flat-square"/>
+</p>
+
+| | |
+|---|---|
+| **Latency** | **<10 ms** audio synthesis latency |
+| **Keys** | 4 octaves, 48 keys, event-driven architecture |
+| **Reception** | 200+ downloads · 4.2/5 rating on university forum |
+
+</details>
+
+<br/>
+
+<!-- WEB ORATOR -->
+<details open>
+<summary><b>🗣️ <a href="https://github.com/rana-m-ahmed/TextToSpeechApp">Web Orator</a> &nbsp;|&nbsp; JavaScript · Web Speech API &nbsp;|&nbsp; Aug 2024</b></summary>
+<br/>
+
+> Accessibility-focused TTS web app — built as a community service project for individuals with speech impairments.
+
+<p>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Web_Speech_API-4285F4?style=flat-square&logo=google-chrome&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Impact-Community_Service-brightgreen?style=flat-square"/>
+</p>
+
+| | |
+|---|---|
+| **Impact** | Deployed at a special needs centre; served **50+ users** |
+| **Feedback** | 90% positive rating |
+| **Coverage** | 10+ languages, adjustable speech rate |
+
+</details>
 
 ---
 
-### 🍽️ [Flutter Meals App](https://github.com/rana-m-ahmed/flutter_meals_app)
-**Recipe Management Application** | *July 2025*
-
-Feature-rich meal planning and recipe discovery application.
-
-- **Technologies**: Flutter, Dart
-- **Key Features**: Recipe categorization, Favorites management, Filtering system
-- **UI/UX**: Modern material design with smooth navigation
-
----
-
-### 🎯 [Flutter Quiz App](https://github.com/rana-m-ahmed/flutter_quiz_app)
-**Interactive Quiz Application** | *July 2025*
-
-Educational quiz application with dynamic question handling and score tracking.
-
-- **Technologies**: Flutter, Dart, C++
-- **Key Features**: Multiple choice questions, Score calculation, Progress tracking
-- **Learning**: State management and user interaction patterns
-
----
-
-### 🎹 [ePiano](https://github.com/ranaahmed786/ePiano)
-**Virtual Piano Application** | *June 2024*
-
-Interactive piano simulator with realistic audio synthesis and multi-octave support.
-
-- **Technologies**: C++, SFML (Simple and Fast Multimedia Library)
-- **Key Features**: 4 major octaves, Real-time audio processing, Event-driven architecture
-- **Innovation**: Advanced note mapping and responsive UI rendering
-
----
-
-### 🗣️ [Web Orator](https://github.com/ranaahmed786/TextToSpeechApp)
-**Text-to-Speech Application** | *August 2024*
-
-Accessibility-focused web application designed as a Community Service Project for individuals with speech impairments.
-
-- **Technologies**: HTML5, CSS3, JavaScript, Web Speech API
-- **Key Features**: Real-time speech synthesis, Dynamic playback controls, Responsive design
-- **Social Impact**: Created accessible communication solutions for people with special needs
-
----
-
-### 🌤️ [Weather Dashboard](https://github.com/ranaahmed786/Weather-Application)
-**Interactive Weather Application** | *July 2024*
-
-Dynamic weather application with real-time data integration and responsive visual design.
-
-- **Technologies**: JavaScript, OpenWeatherMap API, CSS3
-- **Key Features**: Live weather data, Dynamic visual effects, Condition-based theming
-- **API Integration**: Seamless external service integration with error handling
-
----
-
-## Education & Academic Excellence
-
-### 🎓 Bachelor of Computer Science
-**Bahria University, Islamabad** | *2024 - Present*
-- **Current CGPA**: 3.9/4.0
-- **Relevant Coursework**: Data Structures, Algorithms, Software Engineering, Database Systems, Machine Learning
-
-### 📚 FSC Pre-Medical
-**Kips College, Rawalpindi** | *2021 - 2023*
-- **Grade**: A1
-- **Foundation**: Strong analytical and problem-solving skills
-
----
-
-## Areas of Interest & Future Goals
+<!-- MORE PROJECTS TABLE -->
+## 📦 More Projects
 
 <div align="center">
 
-| **Current Focus** | **Emerging Technologies** | **Future Aspirations** |
-|-------------------|---------------------------|------------------------|
-| Mobile Development (Flutter) | Artificial Intelligence | Full-Stack Development |
-| Machine Learning | Blockchain Technology | Software Architecture |
-| UI/UX Design | Deep Learning | Technical Leadership |
-| Algorithm Optimization | Cloud Computing | Open Source Contribution |
-| Community Service Projects | Embedded Systems (Arduino) | AI/ML Engineering |
+| Project | Stack | Highlights |
+|:---|:---:|:---|
+| [🏋️ Flutter Expense Tracker](https://github.com/rana-m-ahmed/flutter_expense_tracker) | Flutter · SQLite · FL Chart | 1000+ transaction records, visual budget analytics |
+| [🍽️ Flutter Meals App](https://github.com/rana-m-ahmed/flutter_meals_app) | Flutter · Dart | Recipe categorisation, favourites, advanced filter system |
+| [🌤️ Weather Dashboard](https://github.com/rana-m-ahmed/Weather-Application) | JavaScript · OpenWeatherMap API | Live data, condition-based theming, error handling |
+| [🧩 Maze Puzzle Game](https://github.com/rana-m-ahmed) | C++ · SFML · DFS | 15+ difficulty-scaled levels, DFS pathfinding, local leaderboard |
+| [🏥 Medical Info System](https://github.com/rana-m-ahmed/medical-info-system) | C++ | Patient record management, structured data storage |
 
 </div>
 
-### Research Interests
-- **Machine Learning & AI**: Exploring supervised and unsupervised learning algorithms
-- **Cross-Platform Development**: Building versatile mobile applications with Flutter
-- **Human-Computer Interaction**: Designing intuitive user experiences
-- **Algorithmic Efficiency**: Optimizing performance in computational problems
-- **Accessibility Technology**: Creating inclusive software solutions
+---
+
+<!-- ACTIVITY GRAPH -->
+## 📈 Contribution Activity
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rana-m-ahmed&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ff6b6b&area=true&hide_border=true&radius=8" width="100%"/>
+</p>
 
 ---
 
-## Professional Development
-
-### Current Learning Path
-- Advanced Flutter development and state management
-- Machine learning algorithms and implementation
-- Modern web development frameworks
-- Software design patterns
-- Database optimization strategies
-
-### Achievements & Goals
-- Completed Flutter Development Specialisation (Coursera)
-- Building portfolio of cross-platform mobile applications
-- Contributing to open-source projects
-- Networking with technology professionals
-- Pursuing advanced certifications in AI/ML
-
----
-
-## Let's Connect
-
-I'm always interested in discussing technology, collaborating on projects, or exploring new opportunities in software development.
-
----
+<!-- ACHIEVEMENTS -->
+## 🏆 Achievements & Honours
 
 <div align="center">
 
-**"Creating innovative solutions through code, one project at a time."**
-
-![Profile Views](https://komarev.com/ghpvc/?username=ranaahmed786&color=brightgreen&style=flat-square)
+| 🥇 Award | 📋 Details |
+|:---|:---|
+| 🏆 **ICPC Asia Topi Regional 2025** | Team Lead · *The Pull Pirates* · **Ranked 73rd / 200+ teams** |
+| ⚡ **NESCON 2025 Speed Programming** | National-level · Team *The Pull Pirates* |
+| 🎖️ **Rector's Honours List** | Nominated for academic excellence — Fall 2025 |
+| 🏅 **Merit Scholarship** | Consecutive merit-based scholarships — CGPA 3.9 · 2024–Present |
 
 </div>
+
+---
+
+<!-- LEADERSHIP -->
+## 👑 Leadership
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🌍 BU GlobalX Student Ambassador</h3>
+      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; <i>Feb 2026 – Present</i></p>
+      <p>Selected via departmental nomination to represent Bahria University in global initiatives and facilitate student engagement in international scholarships and exchange programmes.</p>
+    </td>
+    <td width="50%">
+      <h3>⚔️ Competitive Programming Captain</h3>
+      <p><b>Team: The Pull Pirates</b> &nbsp;|&nbsp; <i>2024 – Present</i></p>
+      <p>Founded the team from scratch. Conduct weekly algorithmic training sessions. Serve dual role as coach and active contestant at ICPC Asia Regional and national-level competitions.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+<!-- EDUCATION -->
+## 🎓 Education
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🎓 B.S. Computer Science</h3>
+      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; 2024 – Expected Dec 2027</p>
+      <ul>
+        <li>CGPA: <b>3.9 / 4.0</b></li>
+        <li>Top 10 in CS Department</li>
+        <li>Rector's Honours List — Fall 2025</li>
+        <li>DSA · OOP · DB Systems · Software Engineering · AI · Computer Architecture · Digital Logic Design</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>📚 FSC Pre-Medical</h3>
+      <p><b>Kips College, Rawalpindi</b> &nbsp;|&nbsp; 2021 – 2023</p>
+      <ul>
+        <li>Grade: <b>A1</b></li>
+        <li>Rigorous analytical foundation in sciences</li>
+        <li>Pivoted fully into Computer Science — best decision ever made</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+<!-- CERTIFICATIONS -->
+## 📜 Certifications
+
+<div align="center">
+
+| 🎓 Certificate | 🏢 Issuer | 🔗 |
+|:---|:---:|:---:|
+| Flutter and Dart: Developing iOS, Android & Mobile Apps | **IBM** via Coursera | [Verify ↗](https://coursera.org/share/34154a75461834d0648a8a6e1d23d982) |
+| Mobile App Notifications, Databases & Publishing | **SkillUp** via Coursera | [Verify ↗](https://coursera.org/share/66fb385195f75b46622acce02328fc56) |
+| Getting Started with Flutter Development | **Google Cloud** via Coursera | [Verify ↗](https://coursera.org/share/fe00b10538d0bd8c4166d5c6513cbb73) |
+
+</div>
+
+---
+
+<!-- SNAKE ANIMATION -->
+## 🐍 Contribution Snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-snake-dark.svg" />
+  </picture>
+</p>
+
+> ⚠️ To enable the snake animation, add [this GitHub Action](https://github.com/Platane/snk) to your profile repo under `.github/workflows/snake.yml`.
+
+---
+
+<!-- QUOTE -->
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" />
+</p>
+
+<!-- FOOTER BANNER -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:16213e,50:1a1a2e,100:0d1117&height=120&section=footer" width="100%"/>
+</p>
+
+<p align="center">
+  <i>Building things that matter — one commit at a time. 🚀</i>
+</p>
