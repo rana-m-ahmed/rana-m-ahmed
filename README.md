@@ -33,7 +33,6 @@ class RanaMuhammadAhmed:
         self.name       = "Rana Muhammad Ahmed"
         self.university = "Bahria University Islamabad"
         self.cgpa       = 3.9
-        self.rank       = "Top 10 in CS Department"
         self.location   = "Rawalpindi, Pakistan 🇵🇰"
         self.background = "Pre-Medical → Computer Science"
 
@@ -45,10 +44,6 @@ class RanaMuhammadAhmed:
             "⚔️  Competing at ICPC Asia Regional level",
             "🌍  GlobalX Student Ambassador @ Bahria University",
         ]
-
-    @property
-    def fun_fact(self):
-        return "Was once memorising biology; now building LLM gateways. 🔬 → 💻"
 ```
 
 ---
