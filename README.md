@@ -119,7 +119,34 @@ class RanaMuhammadAhmed:
 
 <!-- FEATURED PROJECTS -->
 ## 🚀 Featured Projects
+<!-- CROPCOP -->
+<details open>
+<summary><b>🌱 CropCop: AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
+<br/>
 
+> An end-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies directly on low-end Android hardware, no internet required. Edge-deployed and offline-first.
+
+<p>
+  <a href="https://www.kaggle.com/code/ranamuhammadahmed6/cropcop-model-training" target="_blank">
+    <img src="https://img.shields.io/badge/View_Kaggle_Notebook-20BEFF?style=flat-square&logo=kaggle&logoColor=white" alt="View Kaggle Notebook"/>
+  </a>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/>
+  <img src="https://img.shields.io/badge/Phase_0-SSL_Complete-2d6e47?style=flat-square&logo=checkmarx&logoColor=white" alt="Phase 0 Complete"/>
+  <img src="https://img.shields.io/badge/Phase_1-SFT_Next-c47c1a?style=flat-square&logo=pytorch&logoColor=white" alt="Phase 1 Next"/>
+</p>
+
+| | |
+|---|---|
+| **Accuracy** | Top-1: **90.41%** \| Macro F1: **90.39%** \| Top-5: **99.43%** |
+| **Performance** | GPU Inference: **16.8ms** |
+| **Model Size** | **48MB** (FP32) \| **12MB** (INT8) |
+| **Architecture** | EfficientNet-Lite4 Backbone |
+| **Resources** | Notebook, datasets, and backbone models available on [Kaggle](https://www.kaggle.com/code/ranamuhammadahmed6/cropcop-model-training) |
+
+</details>
+
+<br/>
 <!-- LLM SECURITY GATEWAY -->
 <details open>
 <summary><b>🛡️ LLM Security Gateway &nbsp;|&nbsp; Python · FastAPI · Microsoft Presidio · Ollama · spaCy &nbsp;|&nbsp; Mar 2026</b></summary>
