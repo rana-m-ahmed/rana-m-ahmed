@@ -5,7 +5,7 @@
 
 <!-- TYPING SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;CropWise+%E2%80%94+Edge+AI+for+Agriculture+%F0%9F%8C%BF" alt="Typing SVG" />
 </p>
 
 <!-- SOCIAL BADGES -->
@@ -39,6 +39,7 @@ class RanaMuhammadAhmed:
     @property
     def currently(self):
         return [
+            "🌿  Researching edge AI for agriculture — CropWise (EfficientNet · TFLite · Flutter)",
             "🛡️  Building AI security pipelines",
             "📱  Shipping cross-platform Flutter apps in production",
             "⚔️  Competing at ICPC Asia Regional level",
@@ -83,7 +84,7 @@ class RanaMuhammadAhmed:
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,fastapi,qt,supabase,git,github,vscode,androidstudio,arduino&perline=9&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=flutter,fastapi,pytorch,qt,supabase,git,github,vscode,androidstudio,arduino&perline=10&theme=dark" />
 </p>
 
 <br/>
@@ -94,9 +95,9 @@ class RanaMuhammadAhmed:
 |:---:|:---|
 | **Languages** | C++, Python, Dart, JavaScript, HTML5, CSS3, SQL |
 | **Mobile / Cross-Platform** | Flutter, Dart, GoRouter, Flutter Quill, Supabase |
-| **AI / ML / Security** | FastAPI, Microsoft Presidio, Ollama / TinyLlama, spaCy, NLP |
+| **AI / ML / Edge** | PyTorch,Hugging Face, TFLite (INT8), FastAPI, Microsoft Presidio, Ollama / TinyLlama, spaCy, NLP |
 | **Systems & Embedded** | Qt Widgets, SFML, CMake, Arduino, TinkerCAD, Multithreading |
-| **Developer Tooling** | Git, GitHub, VS Code, Qt Creator, Android Studio |
+| **Developer Tooling** | Git, GitHub, VS Code, Qt Creator, Android Studio, Kaggle |
 | **Core CS** | OOP, Data Structures & Algorithms, System Architecture, Memory Management |
 
 </div>
@@ -114,9 +115,9 @@ class RanaMuhammadAhmed:
 
 <!-- FEATURED PROJECTS -->
 ## 🚀 Featured Projects
-<!-- CROPCOP -->
+<!-- CROPWISE -->
 <details open>
-<summary><b>🌱 CropCop: AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
+<summary><b>🌱 CropWise: Edge AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
 <br/>
 
 > An end-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies directly on low-end Android hardware, no internet required. Edge-deployed and offline-first.
