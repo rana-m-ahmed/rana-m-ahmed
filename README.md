@@ -117,7 +117,7 @@ class RanaMuhammadAhmed:
 ## 🚀 Featured Projects
 <!-- CROPWISE -->
 <details open>
-<summary><b>🌱 CropWise: Edge AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
+<summary><b>🌱 CropCrop: Edge AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
 <br/>
 
 > An end-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies directly on low-end Android hardware, no internet required. Edge-deployed and offline-first.
