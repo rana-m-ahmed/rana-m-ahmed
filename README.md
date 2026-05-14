@@ -39,7 +39,7 @@ class RanaMuhammadAhmed:
     @property
     def currently(self):
         return [
-            "🌿  Researching edge AI for agriculture — CropWise (EfficientNet · TFLite · Flutter)",
+            "🌿  Researching edge AI for agriculture — CropCop (EfficientNet · TFLite · Flutter)",
             "🛡️  Building AI security pipelines",
             "📱  Shipping cross-platform Flutter apps in production",
             "⚔️  Competing at ICPC Asia Regional level",
