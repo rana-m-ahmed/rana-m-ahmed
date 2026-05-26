@@ -1,704 +1,832 @@
 #!/usr/bin/env python3
 """
 GitHub Portfolio Analyzer
-Extracts detailed metrics from GitHub repositories to assess market relevance,
-technical skill proficiency, code quality, and effectiveness for portfolio building.
+Comprehensive analysis tool for GitHub repositories with detailed metrics for portfolio assessment.
 
 Usage:
-    python github_portfolio_analyzer.py [--token YOUR_TOKEN] [--local PATH]
+    python github_portfolio_analyzer.py [--token YOUR_TOKEN]
 
 Environment Variables:
-    GITHUB_TOKEN: Personal access token (repo scope)
-    LOCAL_REPO_PATH: Optional path to local repositories folder
+    GITHUB_TOKEN: Personal access token (classic) with 'repo' scope
 """
 
 import os
-import sys
 import json
+import sys
 import re
 import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Any
 from collections import defaultdict, Counter
-from urllib.parse import quote
-import hashlib
+from typing import Dict, List, Optional, Tuple, Any
+import urllib.request
+import urllib.error
+from urllib.parse import urljoin, quote
+import argparse
 import time
 
-try:
-    import requests
-    from requests.adapters import HTTPAdapter
-    from urllib3.util.retry import Retry
-except ImportError:
-    print("ERROR: requests library required. Install with: pip install requests")
-    sys.exit(1)
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
 
+GITHUB_API_BASE = "https://api.github.com"
+OUTPUT_FILE = "projects_analysis.json"
+SCHEMA_FILE = "_schema.md"
+CACHE_DIR = ".github_analyzer_cache"
+RATE_LIMIT_PAUSE = 0.5  # seconds between API calls
 
-class GitHubAnalyzer:
-    """Analyzes GitHub repositories and generates portfolio metrics."""
+# Tech stack detection patterns
+TECH_STACK_PATTERNS = {
+    "Python": r"(import|from)\s+(django|flask|fastapi|sqlalchemy|pandas|numpy|pytest)",
+    "JavaScript": r"(require|import)\s+['\"]?(react|vue|angular|express|next|typescript)",
+    "TypeScript": r"(import|from)\s+['\"].*\.(ts|tsx)['\"]|:\s*(string|number|boolean|interface)",
+    "Docker": r"FROM\s+\w+|WORKDIR|RUN\s+",
+    "Kubernetes": r"apiVersion:|kind:|metadata:|spec:",
+    "AWS": r"(boto3|aws-sdk|cloudformation)",
+    "GraphQL": r"(query|mutation|subscription|resolver)",
+    "REST API": r"(route|endpoint|GET|POST|PUT|DELETE)",
+    "Database": r"(sql|postgres|mysql|mongodb|redis|elasticsearch)",
+    "Testing": r"(pytest|jest|mocha|unittest|rspec|xunit)",
+    "CI/CD": r"(github actions|gitlab ci|jenkins|travis|circleci)",
+}
+
+COMMIT_MESSAGE_PATTERNS = {
+    "fix": r"^(fix|bugfix|hotfix):",
+    "feature": r"^(feat|feature|add):",
+    "docs": r"^(docs|doc):",
+    "refactor": r"^(refactor|refactoring):",
+    "style": r"^(style|format):",
+    "test": r"^(test|tests):",
+    "ci": r"^(ci|chore):",
+}
+
+TEST_PATTERNS = [r".*test.*\.py$", r".*\.test\.js$", r".*\.spec\.js$", r"test/.*"]
+CI_PATTERNS = [".github/workflows", ".gitlab-ci.yml", "Jenkinsfile", ".travis.yml", "azure-pipelines.yml"]
+LINT_PATTERNS = [".eslintrc", "pyproject.toml", ".flake8", "tox.ini", ".pylintrc", "prettier.config.js"]
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+
+class GitHubAPI:
+    """Wrapper for GitHub REST API with rate limit handling."""
     
-    BASE_URL = "https://api.github.com"
-    CACHE_FILE = ".github_analyzer_cache.json"
-    CACHE_EXPIRY = 3600  # 1 hour in seconds
-    
-    # Tech stack detection patterns
-    TECH_PATTERNS = {
-        'React': r'\breact\b|ReactDOM|@react|next\.js',
-        'Vue': r'\bvue\b|vuex|nuxt',
-        'Angular': r'\b@angular|ng-',
-        'TypeScript': r'\btypescript\b|\.ts|\.tsx',
-        'Python': r'\bpython\b|django|flask|fastapi|pandas|numpy',
-        'Node.js': r'\bnode\.js\b|express|fastify',
-        'Django': r'\bdjango\b',
-        'Flask': r'\bflask\b',
-        'FastAPI': r'\bfastapi\b',
-        'PostgreSQL': r'\bpostgres|psycopg',
-        'MongoDB': r'\bmongodb|mongoose|pymongo',
-        'Docker': r'\bdocker\b|dockerfile',
-        'Kubernetes': r'\bkubernetes|k8s',
-        'AWS': r'\bamazon|aws|boto3|s3|lambda',
-        'GCP': r'\bgoogle cloud|gcp|firebase',
-        'GraphQL': r'\bgraphql',
-        'REST API': r'\brest\b|api',
-        'Git': r'\bgit\b',
-        'GitHub Actions': r'\.github\/workflows',
-        'GitLab CI': r'\.gitlab-ci\.yml',
-        'Jenkins': r'\bjenkins\b|Jenkinsfile',
-        'pytest': r'\bpytest\b',
-        'Jest': r'\bjest\b',
-        'Mocha': r'\bmocha\b',
-        'RSpec': r'\brspec\b',
-        'Webpack': r'\bwebpack',
-        'Vite': r'\bvite',
-        'ESLint': r'\beslint',
-        'Prettier': r'\bprettier',
-        'Black': r'\bblack\b',
-        'Docker Compose': r'\bdocker-compose',
-    }
-    
-    TEST_INDICATORS = [
-        '__tests__', 'test', 'tests', 'spec', 'specs',
-        'pytest.ini', 'setup.cfg', 'tox.ini', 'jest.config', 'karma.conf'
-    ]
-    
-    CI_INDICATORS = {
-        'GitHub Actions': '.github/workflows',
-        'GitLab CI': '.gitlab-ci.yml',
-        'Travis CI': '.travis.yml',
-        'Circle CI': '.circleci/config.yml',
-        'Jenkins': 'Jenkinsfile',
-    }
-    
-    LINT_INDICATORS = {
-        'ESLint': '.eslintrc',
-        'Prettier': '.prettierrc',
-        'Black': 'pyproject.toml',
-        'Flake8': '.flake8',
-        'Pylint': '.pylintrc',
-    }
-    
-    def __init__(self, token: Optional[str] = None):
-        """Initialize GitHub analyzer with authentication."""
-        self.token = token or os.getenv('GITHUB_TOKEN')
-        if not self.token:
-            self.token = input("Enter your GitHub Personal Access Token: ").strip()
-        
-        self.session = self._create_session()
-        self.cache = self._load_cache()
-        self.rate_limit_remaining = 5000
-        self.username = None
-        self._get_authenticated_user()
-    
-    def _create_session(self) -> requests.Session:
-        """Create requests session with retry strategy."""
-        session = requests.Session()
-        retry_strategy = Retry(
-            total=3,
-            backoff_factor=1,
-            status_forcelist=[429, 500, 502, 503, 504],
-        )
-        adapter = HTTPAdapter(max_retries=retry_strategy)
-        session.mount("https://", adapter)
-        session.headers.update({
-            'Authorization': f'token {self.token}',
-            'Accept': 'application/vnd.github.v3+json',
-        })
-        return session
-    
-    def _load_cache(self) -> Dict:
-        """Load cached API responses."""
-        if Path(self.CACHE_FILE).exists():
-            try:
-                with open(self.CACHE_FILE, 'r') as f:
-                    cache_data = json.load(f)
-                    # Remove expired entries
-                    current_time = time.time()
-                    return {
-                        k: v for k, v in cache_data.items()
-                        if current_time - v.get('timestamp', 0) < self.CACHE_EXPIRY
-                    }
-            except Exception as e:
-                print(f"Warning: Could not load cache: {e}")
-        return {}
-    
-    def _save_cache(self):
-        """Save cache to disk."""
-        try:
-            with open(self.CACHE_FILE, 'w') as f:
-                json.dump(self.cache, f)
-        except Exception as e:
-            print(f"Warning: Could not save cache: {e}")
-    
-    def _get_cached(self, key: str) -> Optional[Any]:
-        """Retrieve item from cache."""
-        if key in self.cache:
-            return self.cache[key].get('data')
-        return None
-    
-    def _set_cached(self, key: str, data: Any):
-        """Store item in cache."""
-        self.cache[key] = {
-            'data': data,
-            'timestamp': time.time()
+    def __init__(self, token: str):
+        self.token = token
+        self.headers = {
+            "Authorization": f"token {token}",
+            "Accept": "application/vnd.github.v3+json",
         }
+        self.rate_limit_remaining = float('inf')
+        self.rate_limit_reset = 0
     
-    def _api_call(self, endpoint: str, method: str = 'GET', 
-                  params: Optional[Dict] = None, **kwargs) -> Optional[Dict]:
-        """Make API call with caching and rate limit handling."""
-        # Check cache first
-        cache_key = hashlib.md5(f"{method}:{endpoint}:{json.dumps(params or {})}".encode()).hexdigest()
-        cached = self._get_cached(cache_key)
-        if cached is not None:
-            return cached
+    def _make_request(self, endpoint: str, params: Optional[Dict] = None) -> Optional[Any]:
+        """Make API request with rate limit handling."""
+        url = f"{GITHUB_API_BASE}{endpoint}"
+        if params:
+            query_string = "&".join(f"{k}={v}" for k, v in params.items())
+            url = f"{url}?{query_string}"
         
         try:
-            url = f"{self.BASE_URL}{endpoint}"
-            response = self.session.request(method, url, params=params, **kwargs)
-            
-            # Update rate limit
-            if 'X-RateLimit-Remaining' in response.headers:
-                self.rate_limit_remaining = int(response.headers['X-RateLimit-Remaining'])
-            
-            if response.status_code == 404:
+            req = urllib.request.Request(url, headers=self.headers)
+            with urllib.request.urlopen(req, timeout=10) as response:
+                data = json.loads(response.read().decode())
+                if "X-RateLimit-Remaining" in response.headers:
+                    self.rate_limit_remaining = int(response.headers["X-RateLimit-Remaining"])
+                return data
+        except urllib.error.HTTPError as e:
+            if e.code == 403:
+                reset_time = int(e.headers.get("X-RateLimit-Reset", time.time()))
+                sleep_time = max(reset_time - time.time(), 0)
+                print(f"⚠️  Rate limit hit. Sleeping for {sleep_time:.0f}s...", file=sys.stderr)
+                time.sleep(sleep_time + 1)
+                return self._make_request(endpoint, params)
+            elif e.code == 404:
                 return None
-            
-            response.raise_for_status()
-            data = response.json()
-            self._set_cached(cache_key, data)
-            return data
-            
-        except requests.exceptions.RequestException as e:
-            print(f"API Error ({endpoint}): {e}")
-            return None
-    
-    def _get_paginated(self, endpoint: str, params: Optional[Dict] = None, 
-                       per_page: int = 100, max_pages: int = 10) -> List[Dict]:
-        """Fetch paginated API results."""
-        results = []
-        params = params or {}
-        params['per_page'] = min(per_page, 100)
-        
-        for page in range(1, max_pages + 1):
-            params['page'] = page
-            data = self._api_call(endpoint, params=params)
-            
-            if not data:
-                break
-            
-            # Handle both list and dict responses
-            if isinstance(data, list):
-                results.extend(data)
-            elif isinstance(data, dict) and 'items' in data:
-                results.extend(data['items'])
             else:
-                break
-            
-            # Stop if we got fewer results than requested
-            if isinstance(data, list) and len(data) < params['per_page']:
-                break
-        
-        return results
-    
-    def _get_authenticated_user(self):
-        """Get current authenticated user."""
-        user_data = self._api_call('/user')
-        if user_data:
-            self.username = user_data.get('login')
-            print(f"Authenticated as: {self.username}")
+                print(f"❌ API Error ({e.code}): {e.reason}", file=sys.stderr)
+                return None
+        except Exception as e:
+            print(f"⚠️  Request error: {e}", file=sys.stderr)
+            return None
+        finally:
+            time.sleep(RATE_LIMIT_PAUSE)
     
     def get_user_repos(self) -> List[Dict]:
-        """Fetch all repositories for authenticated user."""
-        print(f"\nFetching repositories for {self.username}...")
-        repos = self._get_paginated('/user/repos', {'type': 'all'}, max_pages=100)
-        print(f"Found {len(repos)} repositories")
+        """Fetch all repos for authenticated user."""
+        repos = []
+        page = 1
+        while True:
+            data = self._make_request("/user/repos", {"page": str(page), "per_page": "100"})
+            if not data or isinstance(data, dict) and "message" in data:
+                break
+            if not isinstance(data, list):
+                break
+            repos.extend(data)
+            if len(data) < 100:
+                break
+            page += 1
         return repos
     
-    def analyze_repo(self, repo: Dict) -> Dict:
-        """Analyze a single repository."""
-        repo_name = repo['name']
-        full_name = repo['full_name']
-        print(f"  Analyzing {full_name}...")
+    def get_repo_readme(self, owner: str, repo: str) -> Optional[str]:
+        """Fetch README content."""
+        data = self._make_request(f"/repos/{owner}/{repo}/readme")
+        if data and "content" in data:
+            import base64
+            try:
+                return base64.b64decode(data["content"]).decode()
+            except:
+                return None
+        return None
+    
+    def get_commits(self, owner: str, repo: str, limit: int = 100) -> List[Dict]:
+        """Fetch commit history."""
+        commits = []
+        page = 1
+        per_page = min(100, limit)
+        while len(commits) < limit:
+            data = self._make_request(
+                f"/repos/{owner}/{repo}/commits",
+                {"page": str(page), "per_page": str(per_page)}
+            )
+            if not data or not isinstance(data, list):
+                break
+            commits.extend(data)
+            if len(data) < per_page:
+                break
+            page += 1
+        return commits[:limit]
+    
+    def get_issues(self, owner: str, repo: str, state: str = "all", limit: int = 50) -> List[Dict]:
+        """Fetch issues (excluding PRs)."""
+        issues = []
+        page = 1
+        per_page = min(100, limit)
+        while len(issues) < limit:
+            data = self._make_request(
+                f"/repos/{owner}/{repo}/issues",
+                {"state": state, "page": str(page), "per_page": str(per_page)}
+            )
+            if not data or not isinstance(data, list):
+                break
+            issues.extend([i for i in data if "pull_request" not in i])
+            if len(data) < per_page:
+                break
+            page += 1
+        return issues[:limit]
+    
+    def get_pull_requests(self, owner: str, repo: str, state: str = "all", limit: int = 50) -> List[Dict]:
+        """Fetch pull requests."""
+        prs = []
+        page = 1
+        per_page = min(100, limit)
+        while len(prs) < limit:
+            data = self._make_request(
+                f"/repos/{owner}/{repo}/pulls",
+                {"state": state, "page": str(page), "per_page": str(per_page)}
+            )
+            if not data or not isinstance(data, list):
+                break
+            prs.extend(data)
+            if len(data) < per_page:
+                break
+            page += 1
+        return prs[:limit]
+    
+    def get_file_content(self, owner: str, repo: str, path: str) -> Optional[str]:
+        """Fetch file content."""
+        data = self._make_request(f"/repos/{owner}/{repo}/contents/{quote(path)}")
+        if data and "content" in data:
+            import base64
+            try:
+                return base64.b64decode(data["content"]).decode()
+            except:
+                return None
+        return None
+
+# ============================================================================
+# REPOSITORY ANALYZER
+# ============================================================================
+
+class RepositoryAnalyzer:
+    """Analyze a single repository for detailed metrics."""
+    
+    def __init__(self, api: GitHubAPI):
+        self.api = api
+    
+    def analyze(self, repo_data: Dict) -> Dict:
+        """Perform comprehensive analysis of a repository."""
+        owner = repo_data["owner"]["login"]
+        repo_name = repo_data["name"]
+        
+        print(f"📊 Analyzing {owner}/{repo_name}...", file=sys.stderr)
         
         analysis = {
-            'name': repo_name,
-            'full_name': full_name,
-            'description': repo.get('description') or '',
-            'topics': repo.get('topics') or [],
-            'homepage': repo.get('homepage') or '',
-            'language': repo.get('language') or '',
-            'created_at': repo.get('created_at'),
-            'updated_at': repo.get('updated_at'),
-            'pushed_at': repo.get('pushed_at'),
-            'size_kb': repo.get('size'),
-            'stars_count': repo.get('stargazers_count', 0),
-            'forks_count': repo.get('forks_count', 0),
-            'open_issues_count': repo.get('open_issues_count', 0),
-            'watchers_count': repo.get('watchers_count', 0),
-            'license': repo.get('license', {}).get('name') or '',
-            'default_branch': repo.get('default_branch'),
-            'archived': repo.get('archived', False),
-            'disabled': repo.get('disabled', False),
-            'url': repo.get('html_url'),
+            "name": repo_data["name"],
+            "full_name": repo_data["full_name"],
+            "url": repo_data["html_url"],
+            "description": repo_data.get("description", ""),
+            "topics": repo_data.get("topics", []),
+            "homepage": repo_data.get("homepage", ""),
+            "language": repo_data.get("language", ""),
+            "created_at": repo_data.get("created_at", ""),
+            "updated_at": repo_data.get("updated_at", ""),
+            "pushed_at": repo_data.get("pushed_at", ""),
+            "size_kb": repo_data.get("size", 0),
+            "stars_count": repo_data.get("stargazers_count", 0),
+            "forks_count": repo_data.get("forks_count", 0),
+            "open_issues_count": repo_data.get("open_issues_count", 0),
+            "watchers_count": repo_data.get("watchers_count", 0),
+            "license": repo_data.get("license", {}).get("name", "") if repo_data.get("license") else "",
+            "default_branch": repo_data.get("default_branch", "main"),
+            "archived": repo_data.get("archived", False),
+            "disabled": repo_data.get("disabled", False),
         }
         
-        # Skip archived/disabled repos for detailed analysis
-        if analysis['archived'] or analysis['disabled']:
-            print(f"    Skipping (archived/disabled)")
-            return analysis
+        readme_data = self._analyze_readme(owner, repo_name)
+        analysis.update(readme_data)
         
-        # README preview
-        analysis['readme_preview'] = self._extract_readme_preview(full_name)
-        
-        # Tech stack detection
-        analysis['detected_tech'] = self._detect_tech_stack(full_name, analysis['readme_preview'])
-        
-        # Commits analysis
-        commits_data = self._analyze_commits(full_name)
+        commits_data = self._analyze_commits(owner, repo_name)
         analysis.update(commits_data)
         
-        # Issues analysis
-        issues_data = self._analyze_issues(full_name)
+        issues_data = self._analyze_issues(owner, repo_name)
         analysis.update(issues_data)
         
-        # Pull requests analysis
-        pr_data = self._analyze_prs(full_name)
+        pr_data = self._analyze_prs(owner, repo_name)
         analysis.update(pr_data)
         
-        # Code quality
-        quality_data = self._analyze_code_quality(full_name)
+        quality_data = self._analyze_code_quality(owner, repo_name)
         analysis.update(quality_data)
         
-        # Effectiveness score
-        analysis['effectiveness_score'] = self._calculate_effectiveness_score(analysis)
+        analysis["effectiveness_score"] = self._calculate_effectiveness_score(analysis)
         
         return analysis
     
-    def _extract_readme_preview(self, full_name: str) -> str:
-        """Extract first 500 chars from README."""
-        readme_data = self._api_call(f'/repos/{full_name}/readme')
-        if not readme_data:
-            return ''
+    def _analyze_readme(self, owner: str, repo: str) -> Dict:
+        """Extract README content and tech stack."""
+        result = {
+            "readme_preview": "",
+            "readme_length": 0,
+            "has_setup_section": False,
+            "has_usage_section": False,
+            "has_contribute_section": False,
+            "detected_tech_stack": [],
+        }
         
         try:
-            # README content is base64 encoded
-            import base64
-            content = base64.b64decode(readme_data.get('content', '')).decode('utf-8')
-            return content[:500].replace('\n', ' ')
+            readme = self.api.get_repo_readme(owner, repo)
+            if readme:
+                result["readme_length"] = len(readme)
+                result["readme_preview"] = readme[:500]
+                
+                readme_lower = readme.lower()
+                result["has_setup_section"] = any(s in readme_lower for s in ["setup", "installation", "install"])
+                result["has_usage_section"] = any(s in readme_lower for s in ["usage", "quick start", "getting started"])
+                result["has_contribute_section"] = any(s in readme_lower for s in ["contribute", "contributing"])
+                
+                for tech, pattern in TECH_STACK_PATTERNS.items():
+                    if re.search(pattern, readme, re.IGNORECASE):
+                        result["detected_tech_stack"].append(tech)
         except Exception as e:
-            return ''
+            pass
+        
+        return result
     
-    def _detect_tech_stack(self, full_name: str, readme: str) -> List[str]:
-        """Detect technology stack from README and repo files."""
-        detected = set()
-        combined_text = readme.lower()
-        
-        # Get package.json, requirements.txt, go.mod
-        for filename in ['package.json', 'requirements.txt', 'go.mod', 'Gemfile', 'pom.xml']:
-            file_data = self._api_call(f'/repos/{full_name}/contents/{filename}')
-            if file_data:
-                try:
-                    import base64
-                    content = base64.b64decode(file_data.get('content', '')).decode('utf-8')
-                    combined_text += ' ' + content.lower()
-                except:
-                    pass
-        
-        # Match patterns
-        for tech, pattern in self.TECH_PATTERNS.items():
-            if re.search(pattern, combined_text, re.IGNORECASE):
-                detected.add(tech)
-        
-        return sorted(list(detected))
-    
-    def _analyze_commits(self, full_name: str) -> Dict:
-        """Analyze commits."""
-        commits = self._get_paginated(f'/repos/{full_name}/commits', max_pages=5)
-        
-        total_commits = len(commits)
-        authors = set()
-        topics = Counter()
-        
-        for commit in commits:
-            if commit.get('author'):
-                authors.add(commit['author'].get('login'))
-            
-            msg = commit.get('commit', {}).get('message', '').lower()
-            if 'fix' in msg or 'bug' in msg:
-                topics['fix'] += 1
-            elif 'feature' in msg or 'add' in msg or 'feat' in msg:
-                topics['feature'] += 1
-            elif 'doc' in msg or 'readme' in msg:
-                topics['docs'] += 1
-            elif 'refactor' in msg:
-                topics['refactor'] += 1
-            elif 'test' in msg:
-                topics['test'] += 1
-        
-        # Calculate commits per month
-        if commits:
-            oldest = datetime.fromisoformat(commits[-1]['commit']['author']['date'].replace('Z', '+00:00'))
-            newest = datetime.fromisoformat(commits[0]['commit']['author']['date'].replace('Z', '+00:00'))
-            months_diff = max((newest - oldest).days / 30, 1)
-            commits_per_month = total_commits / months_diff
-        else:
-            commits_per_month = 0
-        
-        return {
-            'total_commits': total_commits,
-            'commits_per_month': round(commits_per_month, 2),
-            'unique_authors': len(authors),
-            'commit_topics': dict(topics.most_common(5)),
+    def _analyze_commits(self, owner: str, repo: str) -> Dict:
+        """Analyze commit history."""
+        result = {
+            "total_commits": 0,
+            "commits_last_6m": 0,
+            "commits_per_month": 0.0,
+            "unique_authors": 0,
+            "commit_topics": {},
+            "commit_frequency": "",
         }
+        
+        try:
+            commits = self.api.get_commits(owner, repo, limit=100)
+            result["total_commits"] = len(commits)
+            
+            if commits:
+                six_months_ago = datetime.utcnow() - timedelta(days=180)
+                authors = set()
+                
+                for commit in commits:
+                    author = commit.get("commit", {}).get("author", {}).get("name", "unknown")
+                    if author != "unknown":
+                        authors.add(author)
+                    
+                    committed_at = commit.get("commit", {}).get("author", {}).get("date", "")
+                    if committed_at:
+                        try:
+                            commit_date = datetime.fromisoformat(committed_at.replace("Z", "+00:00"))
+                            if commit_date > six_months_ago:
+                                result["commits_last_6m"] += 1
+                        except:
+                            pass
+                    
+                    message = commit.get("commit", {}).get("message", "").split("\n")[0].lower()
+                    for topic, pattern in COMMIT_MESSAGE_PATTERNS.items():
+                        if re.match(pattern, message):
+                            result["commit_topics"][topic] = result["commit_topics"].get(topic, 0) + 1
+                            break
+                
+                result["unique_authors"] = len(authors)
+                
+                if commits:
+                    try:
+                        first_date = datetime.fromisoformat(
+                            commits[0]["commit"]["author"]["date"].replace("Z", "+00:00")
+                        )
+                        last_date = datetime.fromisoformat(
+                            commits[-1]["commit"]["author"]["date"].replace("Z", "+00:00")
+                        )
+                        time_span = (first_date - last_date).days + 1
+                        months = max(time_span / 30, 1)
+                        result["commits_per_month"] = round(len(commits) / months, 2)
+                        
+                        if result["commits_per_month"] > 10:
+                            result["commit_frequency"] = "very_active"
+                        elif result["commits_per_month"] > 5:
+                            result["commit_frequency"] = "active"
+                        elif result["commits_per_month"] > 1:
+                            result["commit_frequency"] = "moderate"
+                        else:
+                            result["commit_frequency"] = "minimal"
+                    except:
+                        pass
+        except Exception as e:
+            pass
+        
+        return result
     
-    def _analyze_issues(self, full_name: str) -> Dict:
+    def _analyze_issues(self, owner: str, repo: str) -> Dict:
         """Analyze issues."""
-        issues = self._get_paginated(
-            f'/repos/{full_name}/issues',
-            {'state': 'all'},
-            max_pages=5
-        )
+        result = {
+            "open_issues": 0,
+            "closed_issues": 0,
+            "issue_closure_rate": 0.0,
+            "avg_issue_close_time_days": 0.0,
+            "issue_labels": [],
+        }
         
-        # Filter out pull requests
-        issues = [i for i in issues if 'pull_request' not in i]
-        
-        open_count = sum(1 for i in issues if i['state'] == 'open')
-        closed_count = sum(1 for i in issues if i['state'] == 'closed')
-        
-        labels_counter = Counter()
-        close_times = []
-        
-        for issue in issues:
-            # Count labels
-            for label in issue.get('labels', []):
-                labels_counter[label.get('name')] += 1
+        try:
+            open_issues = self.api.get_issues(owner, repo, state="open", limit=50)
+            closed_issues = self.api.get_issues(owner, repo, state="closed", limit=50)
             
-            # Calculate time to close
-            if issue['state'] == 'closed' and issue.get('closed_at'):
-                created = datetime.fromisoformat(issue['created_at'].replace('Z', '+00:00'))
-                closed = datetime.fromisoformat(issue['closed_at'].replace('Z', '+00:00'))
-                close_times.append((closed - created).days)
+            result["open_issues"] = len(open_issues)
+            result["closed_issues"] = len(closed_issues)
+            
+            if result["closed_issues"] + result["open_issues"] > 0:
+                result["issue_closure_rate"] = round(
+                    result["closed_issues"] / (result["closed_issues"] + result["open_issues"]) * 100, 2
+                )
+            
+            close_times = []
+            for issue in closed_issues:
+                created = issue.get("created_at", "")
+                closed = issue.get("closed_at", "")
+                if created and closed:
+                    try:
+                        created_date = datetime.fromisoformat(created.replace("Z", "+00:00"))
+                        closed_date = datetime.fromisoformat(closed.replace("Z", "+00:00"))
+                        close_times.append((closed_date - created_date).days)
+                    except:
+                        pass
+            
+            if close_times:
+                result["avg_issue_close_time_days"] = round(sum(close_times) / len(close_times), 1)
+            
+            all_labels = set()
+            for issue in open_issues + closed_issues:
+                for label in issue.get("labels", []):
+                    all_labels.add(label.get("name", ""))
+            result["issue_labels"] = sorted(list(all_labels))
+        except Exception as e:
+            pass
         
-        avg_close_time = round(sum(close_times) / len(close_times), 1) if close_times else 0
-        
-        return {
-            'open_issues': open_count,
-            'closed_issues': closed_count,
-            'issue_close_rate': round(closed_count / (open_count + closed_count) * 100, 1) if (open_count + closed_count) > 0 else 0,
-            'avg_issue_close_days': avg_close_time,
-            'top_issue_labels': dict(labels_counter.most_common(5)),
-        }
+        return result
     
-    def _analyze_prs(self, full_name: str) -> Dict:
+    def _analyze_prs(self, owner: str, repo: str) -> Dict:
         """Analyze pull requests."""
-        prs = self._get_paginated(
-            f'/repos/{full_name}/pulls',
-            {'state': 'all'},
-            max_pages=5
-        )
-        
-        merged_count = sum(1 for pr in prs if pr.get('merged_at'))
-        abandoned_count = sum(1 for pr in prs if pr['state'] == 'closed' and not pr.get('merged_at'))
-        
-        review_comments = []
-        for pr in prs:
-            if pr.get('review_comments'):
-                review_comments.append(pr['review_comments'])
-        
-        avg_review_comments = round(sum(review_comments) / len(review_comments), 1) if review_comments else 0
-        
-        return {
-            'total_prs': len(prs),
-            'merged_prs': merged_count,
-            'abandoned_prs': abandoned_count,
-            'pr_merge_rate': round(merged_count / len(prs) * 100, 1) if prs else 0,
-            'avg_pr_review_comments': avg_review_comments,
+        result = {
+            "merged_prs": 0,
+            "open_prs": 0,
+            "closed_prs": 0,
+            "pr_merge_rate": 0.0,
+            "avg_pr_review_comments": 0.0,
         }
+        
+        try:
+            open_prs = self.api.get_pull_requests(owner, repo, state="open", limit=50)
+            closed_prs = self.api.get_pull_requests(owner, repo, state="closed", limit=50)
+            
+            result["open_prs"] = len(open_prs)
+            result["closed_prs"] = len(closed_prs)
+            
+            merged_count = sum(1 for pr in closed_prs if pr.get("merged_at"))
+            result["merged_prs"] = merged_count
+            
+            if result["closed_prs"] > 0:
+                abandoned = result["closed_prs"] - merged_count
+                if abandoned > 0:
+                    result["pr_merge_rate"] = round(result["merged_prs"] / result["closed_prs"] * 100, 2)
+                else:
+                    result["pr_merge_rate"] = 100.0
+            
+            review_counts = [pr.get("review_comments", 0) for pr in open_prs + closed_prs]
+            if review_counts:
+                result["avg_pr_review_comments"] = round(sum(review_counts) / len(review_counts), 2)
+        except Exception as e:
+            pass
+        
+        return result
     
-    def _analyze_code_quality(self, full_name: str) -> Dict:
+    def _analyze_code_quality(self, owner: str, repo: str) -> Dict:
         """Analyze code quality indicators."""
-        quality = {
-            'has_tests': False,
-            'has_ci': [],
-            'has_linting': [],
-            'lines_of_code': 0,
-            'file_count': 0,
-            'avg_file_size_kb': 0,
+        result = {
+            "has_tests": False,
+            "has_ci_config": False,
+            "has_lint_config": False,
+            "test_files_count": 0,
+            "outdated_dependencies": [],
         }
         
-        # Get repo tree
-        tree = self._api_call(f'/repos/{full_name}/git/trees/HEAD', params={'recursive': '1'})
-        if not tree:
-            return quality
+        try:
+            for ci_file in [".github/workflows", ".gitlab-ci.yml", "Jenkinsfile", ".travis.yml", "azure-pipelines.yml"]:
+                content = self.api.get_file_content(owner, repo, ci_file)
+                if content:
+                    result["has_ci_config"] = True
+                    break
+            
+            for lint_file in [".eslintrc.json", ".eslintrc.js", "pyproject.toml", ".flake8", "tox.ini"]:
+                content = self.api.get_file_content(owner, repo, lint_file)
+                if content:
+                    result["has_lint_config"] = True
+                    break
+            
+            # Check for tests
+            for test_dir in ["test", "tests", "__tests__", "spec", "specs"]:
+                content = self.api.get_file_content(owner, repo, test_dir)
+                if content:
+                    result["has_tests"] = True
+                    break
+            
+            # Check dependency files
+            for dep_file in ["package.json", "requirements.txt", "go.mod", "Gemfile", "pom.xml"]:
+                content = self.api.get_file_content(owner, repo, dep_file)
+                if content:
+                    result["outdated_dependencies"] = self._check_outdated_deps(content, dep_file)
+                    break
+        except Exception as e:
+            pass
         
-        files = tree.get('tree', [])
-        quality['file_count'] = len([f for f in files if f['type'] == 'blob'])
-        
-        # Check for test directories
-        for f in files:
-            path_lower = f['path'].lower()
-            if any(test_dir in path_lower for test_dir in self.TEST_INDICATORS):
-                quality['has_tests'] = True
-                break
-        
-        # Check for CI
-        for ci_name, ci_path in self.CI_INDICATORS.items():
-            if any(ci_path in f['path'] for f in files):
-                quality['has_ci'].append(ci_name)
-        
-        # Check for linting
-        for lint_name, lint_file in self.LINT_INDICATORS.items():
-            if any(lint_file in f['path'] for f in files):
-                quality['has_linting'].append(lint_name)
-        
-        # Calculate LOC (estimate from file sizes)
-        blob_files = [f for f in files if f['type'] == 'blob']
-        if blob_files:
-            size_sum = sum(f.get('size', 0) for f in blob_files)
-            quality['file_count'] = len(blob_files)
-            quality['avg_file_size_kb'] = round(size_sum / len(blob_files) / 1024, 2) if blob_files else 0
-        
-        return quality
+        return result
     
-    def _calculate_effectiveness_score(self, analysis: Dict) -> float:
-        """Calculate effectiveness score (0-100)."""
-        score = 0
+    def _check_outdated_deps(self, content: str, filename: str) -> List[str]:
+        """Parse dependency files and extract top packages."""
+        outdated = []
         
-        # Activity score (30%)
-        activity_score = 0
-        commits_recent = analysis.get('commits_per_month', 0)
-        activity_score += min(commits_recent / 2 * 20, 20)  # Up to 20 for activity
+        if "package.json" in filename:
+            try:
+                package = json.loads(content)
+                deps = {**package.get("dependencies", {}), **package.get("devDependencies", {})}
+                for pkg, version in list(deps.items())[:3]:
+                    outdated.append(f"{pkg}@{version}")
+            except:
+                pass
+        elif "requirements.txt" in filename:
+            lines = content.split("\n")
+            for line in lines[:3]:
+                line = line.strip()
+                if line and "==" in line:
+                    outdated.append(line)
         
-        issue_close_rate = analysis.get('issue_close_rate', 0)
-        activity_score += min(issue_close_rate / 5, 10)  # Up to 10 for issue closure
+        return outdated
+    
+    def _calculate_effectiveness_score(self, analysis: Dict) -> int:
+        """Calculate project effectiveness score (0-100)."""
+        score = 0.0
         
-        score += activity_score
+        # 30% from activity
+        activity_score = 0.0
+        if analysis.get("commits_last_6m", 0) > 10:
+            activity_score += 10
+        elif analysis.get("commits_last_6m", 0) > 5:
+            activity_score += 7
+        else:
+            activity_score += 2
         
-        # Community score (30%)
-        community_score = 0
-        stars = analysis.get('stars_count', 0)
-        community_score += min(stars / 50, 15)  # Up to 15 for stars
+        if analysis.get("issue_closure_rate", 0) > 80:
+            activity_score += 10
+        elif analysis.get("issue_closure_rate", 0) > 50:
+            activity_score += 5
         
-        forks = analysis.get('forks_count', 0)
-        community_score += min(forks / 10, 10)  # Up to 10 for forks
+        if analysis.get("commits_last_6m", 0) > 0:
+            activity_score += 10
         
-        unique_authors = analysis.get('unique_authors', 0)
-        community_score += min((unique_authors - 1) / 10, 5)  # Up to 5 for external contributors
+        score += activity_score * 0.30
         
-        score += min(community_score, 30)
+        # 30% from community
+        community_score = 0.0
+        if analysis.get("stars_count", 0) > 100:
+            community_score += 15
+        elif analysis.get("stars_count", 0) > 10:
+            community_score += 8
+        elif analysis.get("stars_count", 0) > 0:
+            community_score += 3
         
-        # Code health (20%)
-        health_score = 0
-        if analysis.get('has_tests'):
+        if analysis.get("forks_count", 0) > 5:
+            community_score += 10
+        elif analysis.get("forks_count", 0) > 0:
+            community_score += 5
+        
+        if analysis.get("unique_authors", 0) > 5:
+            community_score += 5
+        
+        score += community_score * 0.30
+        
+        # 20% from code health
+        health_score = 0.0
+        if analysis.get("has_tests"):
             health_score += 10
-        if analysis.get('has_ci'):
+        if analysis.get("has_ci_config"):
             health_score += 5
-        if analysis.get('has_linting'):
+        if analysis.get("has_lint_config"):
             health_score += 5
         
-        score += health_score
+        score += health_score * 0.20
         
-        # Documentation (20%)
-        doc_score = 0
-        readme_len = len(analysis.get('readme_preview', ''))
-        doc_score += min(readme_len / 100, 20)
+        # 20% from documentation
+        doc_score = 0.0
+        if analysis.get("readme_length", 0) > 1000:
+            doc_score += 10
+        elif analysis.get("readme_length", 0) > 500:
+            doc_score += 5
         
-        score += doc_score
+        if analysis.get("has_setup_section") and analysis.get("has_usage_section"):
+            doc_score += 10
+        elif analysis.get("has_setup_section") or analysis.get("has_usage_section"):
+            doc_score += 5
         
-        return min(round(score, 1), 100)
+        score += doc_score * 0.20
+        
+        return int(score)
+
+# ============================================================================
+# MAIN ANALYZER
+# ============================================================================
+
+class PortfolioAnalyzer:
+    """Main analyzer orchestrating the analysis of all repositories."""
+    
+    def __init__(self, token: str):
+        self.api = GitHubAPI(token)
+        self.analyzer = RepositoryAnalyzer(self.api)
+        os.makedirs(CACHE_DIR, exist_ok=True)
     
     def analyze_all(self) -> List[Dict]:
         """Analyze all user repositories."""
-        repos = self.get_user_repos()
-        analyses = []
+        print("🔍 Fetching GitHub repositories...", file=sys.stderr)
+        repos = self.api.get_user_repos()
         
-        for repo in repos:
+        results = []
+        skipped = []
+        
+        for i, repo in enumerate(repos, 1):
             try:
-                analysis = self.analyze_repo(repo)
-                analyses.append(analysis)
-                time.sleep(0.1)  # Rate limit friendly
+                if repo.get("archived"):
+                    print(f"⏭️  Skipping {repo['name']} (archived)", file=sys.stderr)
+                    skipped.append(repo["name"])
+                    continue
+                
+                analysis = self.analyzer.analyze(repo)
+                results.append(analysis)
+                print(f"✅ {i}/{len(repos)} - {repo['name']}", file=sys.stderr)
             except Exception as e:
-                print(f"    Error analyzing {repo['name']}: {e}")
+                print(f"❌ Error analyzing {repo.get('name', 'unknown')}: {e}", file=sys.stderr)
+                skipped.append(repo.get("name", "unknown"))
         
-        return analyses
+        print(f"\n📊 Analysis complete: {len(results)} repos analyzed, {len(skipped)} skipped", file=sys.stderr)
+        if skipped:
+            print(f"⏭️  Skipped: {', '.join(skipped)}", file=sys.stderr)
+        
+        return results
     
-    def export_json(self, analyses: List[Dict], filename: str = 'projects_analysis.json'):
-        """Export analysis to minified JSON."""
-        with open(filename, 'w') as f:
-            json.dump(analyses, f, separators=(',', ':'))
-        print(f"\nExported analysis to {filename}")
+    def save_results(self, results: List[Dict]) -> None:
+        """Save results to JSON and schema to markdown."""
+        # Sort by effectiveness score
+        results = sorted(results, key=lambda x: x.get("effectiveness_score", 0), reverse=True)
+        
+        # Save JSON (minified)
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(results, f, separators=(',', ':'), default=str)
+        print(f"\n💾 Results saved to {OUTPUT_FILE}", file=sys.stderr)
+        
+        # Save schema
+        self._save_schema()
+        print(f"📋 Schema saved to {SCHEMA_FILE}", file=sys.stderr)
     
-    def export_schema(self, filename: str = '_schema.md'):
-        """Export schema documentation."""
-        schema_md = """# Projects Analysis Schema
+    def _save_schema(self) -> None:
+        """Generate and save schema documentation."""
+        schema_content = """# GitHub Portfolio Analysis Schema
 
 ## Overview
-This JSON file contains comprehensive analysis of GitHub repositories for portfolio assessment and AI-driven project evaluation.
+This JSON file contains comprehensive metrics for assessing GitHub projects. Each object represents one repository analyzed, sorted by effectiveness_score (highest first).
 
-## Field Definitions
+## Field Descriptions
 
-### Repository Metadata
+### Basic Repository Information
 - `name` (string): Repository name
-- `full_name` (string): Owner/repo format
+- `full_name` (string): Full repository path (owner/repo)
+- `url` (string): GitHub repository URL
 - `description` (string): Repository description
-- `topics` (array): Repository topics/tags
+- `topics` (array): GitHub topics/tags
 - `homepage` (string): Project homepage URL
 - `language` (string): Primary programming language
-- `url` (string): Repository URL on GitHub
-- `created_at` (ISO 8601): Repository creation date
-- `updated_at` (ISO 8601): Last metadata update
-- `pushed_at` (ISO 8601): Last commit date
-- `size_kb` (integer): Repository size in KB
-- `archived` (boolean): Is repository archived
-- `disabled` (boolean): Is repository disabled
+- `created_at` (string): ISO 8601 creation timestamp
+- `updated_at` (string): ISO 8601 last update timestamp
+- `pushed_at` (string): ISO 8601 last commit timestamp
+- `size_kb` (integer): Repository size in kilobytes
+- `license` (string): License name (e.g., "MIT", "Apache-2.0")
+- `default_branch` (string): Default branch name
+- `archived` (boolean): Whether repository is archived
+- `disabled` (boolean): Whether repository is disabled
 
 ### Community Metrics
-- `stars_count` (integer): GitHub stars
+- `stars_count` (integer): Number of stars/watchers
 - `forks_count` (integer): Number of forks
-- `open_issues_count` (integer): Open issues
-- `watchers_count` (integer): Repository watchers
-- `license` (string): License type
+- `open_issues_count` (integer): Number of open issues at fetch time
+- `watchers_count` (integer): Number of watchers
 
-### Content Analysis
-- `readme_preview` (string): First 500 chars of README
-- `detected_tech` (array): Detected technology stack
+### README Analysis
+- `readme_preview` (string): First 500 characters of README
+- `readme_length` (integer): Total README length in characters
+- `has_setup_section` (boolean): README contains setup/installation instructions
+- `has_usage_section` (boolean): README contains usage/quickstart examples
+- `has_contribute_section` (boolean): README contains contribution guidelines
+- `detected_tech_stack` (array): Technologies detected in README (e.g., "Python", "React", "Docker")
 
 ### Commit Analysis
-- `total_commits` (integer): Total commit count
-- `commits_per_month` (float): Average commits per month
-- `unique_authors` (integer): Number of unique authors
-- `commit_topics` (object): Frequency of commit message types (fix, feature, docs, etc.)
+- `total_commits` (integer): Total commits in repository (up to 100 fetched)
+- `commits_last_6m` (integer): Commits made in last 6 months
+- `commits_per_month` (number): Average commits per month across repo lifetime
+- `commit_frequency` (string): Activity level: very_active (>10/month), active (>5/month), moderate (>1/month), minimal
+- `unique_authors` (integer): Number of distinct commit authors
+- `commit_topics` (object): Count of commits by type (fix, feature, docs, refactor, style, test, ci)
 
-### Issue Management
-- `open_issues` (integer): Currently open issues
-- `closed_issues` (integer): Resolved issues
-- `issue_close_rate` (float): % of issues resolved
-- `avg_issue_close_days` (float): Average days to close an issue
-- `top_issue_labels` (object): Most frequently used issue labels
+### Issues Analysis
+- `open_issues` (integer): Number of open issues (up to 50 fetched)
+- `closed_issues` (integer): Number of closed issues (up to 50 fetched)
+- `issue_closure_rate` (number): Percentage of fetched issues that are closed (0-100)
+- `avg_issue_close_time_days` (number): Average days to close a closed issue
+- `issue_labels` (array): Common issue labels found (e.g., "bug", "enhancement", "help wanted")
 
-### Pull Request Management
-- `total_prs` (integer): Total pull requests
-- `merged_prs` (integer): Successfully merged PRs
-- `abandoned_prs` (integer): Closed without merging
-- `pr_merge_rate` (float): % of PRs merged
-- `avg_pr_review_comments` (float): Average review comments per PR
+### Pull Request Analysis
+- `open_prs` (integer): Number of open pull requests (up to 50 fetched)
+- `closed_prs` (integer): Number of closed pull requests (up to 50 fetched)
+- `merged_prs` (integer): Number of merged pull requests
+- `pr_merge_rate` (number): Percentage of closed PRs that were merged (0-100)
+- `avg_pr_review_comments` (number): Average review comments per PR
 
-### Code Quality Indicators
-- `has_tests` (boolean): Presence of test files
-- `has_ci` (array): Detected CI/CD systems (GitHub Actions, GitLab CI, etc.)
-- `has_linting` (array): Detected linting tools (ESLint, Black, Flake8, etc.)
-- `file_count` (integer): Total file count
-- `avg_file_size_kb` (float): Average file size
-- `lines_of_code` (integer): Estimated lines of code
+### Code Quality Metrics
+- `has_tests` (boolean): Repository contains test files or test directories
+- `has_ci_config` (boolean): Repository has CI/CD configuration (.github/workflows, .gitlab-ci.yml, etc.)
+- `has_lint_config` (boolean): Repository has linting/formatting configuration
+- `test_files_count` (integer): Number of detected test files
+- `outdated_dependencies` (array): Top 3 packages from dependency files (package.json, requirements.txt, etc.)
 
 ### Effectiveness Score
-- `effectiveness_score` (float, 0-100): Composite score calculated as:
-  - 30% from activity (commits/month + issue closure rate)
-  - 30% from community (stars, forks, external contributors)
-  - 20% from code health (tests, CI, linting)
-  - 20% from documentation (README length)
+- `effectiveness_score` (integer): Composite score (0-100) based on:
+  - **30% Activity**: commits in last 6 months + issue closure rate
+  - **30% Community**: stars, forks, external contributors
+  - **20% Code Health**: tests, CI/CD, linting
+  - **20% Documentation**: README quality and completeness
 
-## AI Usage Guide
+## Usage for AI Analysis
 
-### Identify Technical Niches
-- Group projects by `detected_tech` and `language`
-- Analyze `effectiveness_score` per technology stack
-- Identify which technologies have the highest community engagement
+### 1. Identify Strongest Technical Niches
+```
+- Group projects by detected_tech_stack (count frequency)
+- Calculate avg effectiveness_score per technology
+- Recommend specializing in top 3 tech stacks by impact
+```
 
-### Portfolio Optimization
-- Projects with `effectiveness_score` > 70 are portfolio-ready
-- Projects with low score but strong `total_commits` may need documentation
-- High `stars_count` projects should be featured prominently
+### 2. Prioritize Portfolio Projects
+```
+- Filter: effectiveness_score >= 70
+- Filter: (stars_count > 10 OR forks_count > 5)
+- Prioritize: has_tests AND has_ci_config
+- These are top candidates for portfolio, case studies, and marketing
+```
 
-### Code Quality Assessment
-- Missing `has_tests`? Suggest adding test coverage
-- Missing `has_ci`? Recommend CI/CD setup
-- Low `avg_pr_review_comments`? Indicate collaboration opportunity
+### 3. Identify Skill Gaps
+```
+- Find projects with has_tests = false (testing coverage gap)
+- Find projects with has_ci_config = false (DevOps/CI gap)
+- Count projects by language (underrepresented = skill gap)
+- Recommend learning: missing testing frameworks, CI platforms, cloud services
+```
 
-### Skill Proficiency
-- `commits_per_month` → Indicates activity level
-- `unique_authors` → Collaboration skills
-- `commit_topics` distribution → Breadth of work (fix vs feature vs docs)
+### 4. Refactoring Candidates
+```
+- Low effectiveness_score (< 40) with stars_count > 5
+- High outdated_dependencies count (> 2)
+- has_tests = false with large codebase
+- readme_length < 500 (documentation debt)
+- These projects have high ROI for improvement
+```
 
-### Gap Analysis
-- Compare `detected_tech` across all projects
-- Identify missing modern tech stacks
-- Suggest complementary projects to build
+### 5. Freelance Case Study Candidates
+```
+- Filter: stars_count >= 50 OR forks_count >= 5
+- Filter: effectiveness_score >= 65
+- Must have: has_tests AND has_ci_config AND readme_length > 500
+- Prioritize: projects solving specific business problems
+- Action: Create detailed case studies (problem → solution → impact → metrics)
+```
 
-### Upwork Client Appeal
-- High `effectiveness_score` projects → Enterprise/stable client work
-- Multiple languages/frameworks → Full-stack capability
-- Strong `pr_merge_rate` and `avg_pr_review_comments` → Team player
+### 6. Project Ideation & Market Gaps
+```
+- Find underserved tech combinations (e.g., Python+GraphQL+Docker)
+- Compare detected_tech_stack frequency vs market demand
+- Identify emerging tech with few projects
+- Recommend new projects to fill gaps and increase marketability
+```
+
+### 7. Engagement Analysis
+```
+- Projects with stars_count > 50 but effectiveness_score < 50 = revival candidates
+- Projects with activity > median but stars < 10 = visibility/marketing opportunity
+- High pr_merge_rate (>90%) + issue_closure_rate (>80%) = healthy community
+```
+
+### 8. Skill Assessment
+```
+- commits_per_month by language = expertise depth
+- unique_authors = collaboration experience
+- commit_topics distribution = work type (more fixes vs features?)
+- Presence of CI/CD + tests + docs = professional development maturity
+```
 """
-        
-        with open(filename, 'w') as f:
-            f.write(schema_md)
-        print(f"Exported schema to {filename}")
+        with open(SCHEMA_FILE, "w") as f:
+            f.write(schema_content)
 
+# ============================================================================
+# CLI & ENTRY POINT
+# ============================================================================
 
 def main():
-    """Main entry point."""
-    import argparse
-    
-    parser = argparse.ArgumentParser(description='GitHub Portfolio Analyzer')
-    parser.add_argument('--token', help='GitHub Personal Access Token')
-    parser.add_argument('--output', default='projects_analysis.json', help='Output JSON filename')
-    parser.add_argument('--schema', default='_schema.md', help='Schema documentation filename')
+    parser = argparse.ArgumentParser(
+        description="Comprehensive GitHub portfolio analyzer for AI-driven assessment",
+        epilog="Example: python github_portfolio_analyzer.py --token ghp_xxxxx"
+    )
+    parser.add_argument("--token", help="GitHub personal access token (or set GITHUB_TOKEN env var)")
     
     args = parser.parse_args()
     
-    try:
-        analyzer = GitHubAnalyzer(token=args.token)
-        analyses = analyzer.analyze_all()
-        analyzer.export_json(analyses, args.output)
-        analyzer.export_schema(args.schema)
-        
-        print(f"\n{'='*60}")
-        print(f"Analysis complete!")
-        print(f"{'='*60}")
-        print(f"Total repositories analyzed: {len(analyses)}")
-        
-        # Summary statistics
-        avg_score = sum(a.get('effectiveness_score', 0) for a in analyses) / len(analyses) if analyses else 0
-        print(f"Average effectiveness score: {avg_score:.1f}/100")
-        
-        top_projects = sorted(analyses, key=lambda x: x.get('effectiveness_score', 0), reverse=True)[:3]
-        print(f"\nTop 3 Projects:")
-        for i, proj in enumerate(top_projects, 1):
-            print(f"  {i}. {proj['name']} ({proj.get('effectiveness_score', 0)}/100)")
-        
-        print(f"\nFiles generated:")
-        print(f"  - {args.output}")
-        print(f"  - {args.schema}")
-        
-    except KeyboardInterrupt:
-        print("\nAborted by user")
+    # Get token
+    token = args.token or os.getenv("GITHUB_TOKEN")
+    if not token:
+        print("❌ Error: GitHub token required", file=sys.stderr)
+        print("   Option 1: Set GITHUB_TOKEN environment variable", file=sys.stderr)
+        print("   Option 2: Pass --token to command line", file=sys.stderr)
+        print("\n📖 To create a token:", file=sys.stderr)
+        print("   1. Go to https://github.com/settings/tokens", file=sys.stderr)
+        print("   2. Click 'Generate new token (classic)'", file=sys.stderr)
+        print("   3. Select 'repo' scope", file=sys.stderr)
+        print("   4. Copy the token and use it with this script", file=sys.stderr)
         sys.exit(1)
+    
+    # Run analysis
+    try:
+        print("🚀 Starting GitHub Portfolio Analyzer...\n", file=sys.stderr)
+        analyzer = PortfolioAnalyzer(token)
+        results = analyzer.analyze_all()
+        
+        if results:
+            analyzer.save_results(results)
+            
+            print(f"\n✨ Analysis complete!", file=sys.stderr)
+            print(f"📄 Generated files:", file=sys.stderr)
+            print(f"   - {OUTPUT_FILE} (JSON data)", file=sys.stderr)
+            print(f"   - {SCHEMA_FILE} (Field documentation)", file=sys.stderr)
+            print(f"\n💡 Next steps:", file=sys.stderr)
+            print(f"   1. Review {SCHEMA_FILE} to understand the data structure", file=sys.stderr)
+            print(f"   2. Use {OUTPUT_FILE} with your AI tool for portfolio assessment", file=sys.stderr)
+            print(f"   3. Sort by 'effectiveness_score' to identify top projects", file=sys.stderr)
+            print(f"   4. Check for skill gaps in has_tests and has_ci_config fields", file=sys.stderr)
+        else:
+            print("❌ No repositories found or analyzed", file=sys.stderr)
+            sys.exit(1)
+    except KeyboardInterrupt:
+        print("\n⚠️  Analysis interrupted by user", file=sys.stderr)
+        sys.exit(130)
     except Exception as e:
-        print(f"Fatal error: {e}")
+        print(f"\n❌ Fatal error: {e}", file=sys.stderr)
         import traceback
         traceback.print_exc()
         sys.exit(1)
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
