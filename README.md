@@ -1,11 +1,11 @@
 <!-- HEADER BANNER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1a2e,100:16213e&height=200&section=header&text=Rana%20Muhammad%20Ahmed&fontSize=42&fontColor=58a6ff&fontAlignY=38&desc=CS%20Student%20%7C%20Builder%20%7C%20Problem%20Solver&descAlignY=58&descColor=8b949e&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1a2e,100:16213e&height=200&section=header&text=Rana%20Muhammad%20Ahmed&fontSize=42&fontColor=58a6ff&fontAlignY=38&desc=AI%20Full%20Stack%20Engineer" />
 </p>
 
 <!-- TYPING SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+%7C+Flutter+%7C+C%2B%2B+%7C+Full-Stack;Building+things+that+actually+ship+%F0%9F%9A%80;Top+10+CS+%40+Bahria+University+%E2%80%94+CGPA+3.9%2F4.0;ICPC+Asia+Regional+Contestant+%F0%9F%8F%86;CropWise+%E2%80%94+Edge+AI+for+Agriculture+%F0%9F%8C%BF" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+Full+Stack+Engineer;PyTorch+%7C+Flutter+%7C+TypeScript+%7C+Production+Systems" />
 </p>
 
 <!-- SOCIAL BADGES -->
@@ -25,31 +25,32 @@
 ---
 
 <!-- ABOUT ME -->
-## 🧑‍💻 About Me
+## About Me
 
 ```python
 class RanaMuhammadAhmed:
     def __init__(self):
         self.name       = "Rana Muhammad Ahmed"
+        self.title      = "AI Full Stack Engineer"
         self.university = "Bahria University Islamabad"
-        self.cgpa       = 3.9
-        self.location   = "Rawalpindi, Pakistan 🇵🇰"
+        self.cgpa       = 3.89
+        self.location   = "Rawalpindi, Pakistan"
         self.background = "Pre-Medical → Computer Science"
 
     @property
     def currently(self):
         return [
-            "🌿  Researching edge AI for agriculture — CropCop (EfficientNet · TFLite · Flutter)",
-            "🛡️  Building AI security pipelines",
-            "📱  Shipping cross-platform Flutter apps in production",
-            "⚔️  Competing at ICPC Asia Regional level",
-            "🌍  GlobalX Student Ambassador @ Bahria University",
+            "Building end-to-end AI systems from data pipeline to production deployment",
+            "Researching privilege aggregation mechanisms in MCP systems",
+            "Shipping cross-platform applications at scale (400+ users/day)",
+            "Competing at ICPC Asia Regional level",
+            "Global Student Ambassador @ Bahria University",
         ]
 ```
 
 ---
 <!-- EDUCATION -->
-## 🎓 Education
+## Education
 
 <table>
   <tr>
@@ -57,8 +58,7 @@ class RanaMuhammadAhmed:
       <h3>B.S. Computer Science</h3>
       <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; 2024 – Expected Dec 2027</p>
       <ul>
-        <li>CGPA: <b>3.9 / 4.0</b></li>
-        <li>Top 10 in CS Department</li>
+        <li>CGPA: <b>3.89 / 4.0</b></li>
         <li>Rector's Honours List — Fall 2025</li>
         <li>DSA · OOP · DB Systems · Software Engineering · AI · Computer Architecture · Digital Logic Design</li>
       </ul>
@@ -77,14 +77,14 @@ class RanaMuhammadAhmed:
 
 ---
 <!-- TECH STACK -->
-## 🛠️ Tech Stack
+## Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=cpp,python,dart,js,html,css,sql&perline=7&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=cpp,python,dart,typescript,html,css,sql&perline=7&theme=dark" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=flutter,fastapi,pytorch,qt,supabase,git,github,vscode,androidstudio,arduino&perline=10&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=pytorch,fastapi,flutter,supabase,nodejs,git,github,vscode,androidstudio&perline=9&theme=dark" />
 </p>
 
 <br/>
@@ -93,78 +93,125 @@ class RanaMuhammadAhmed:
 
 | Domain | Tools |
 |:---:|:---|
-| **Languages** | C++, Python, Dart, JavaScript, HTML5, CSS3, SQL |
-| **Mobile / Cross-Platform** | Flutter, Dart, GoRouter, Flutter Quill, Supabase |
-| **AI / ML / Edge** | PyTorch,Hugging Face, TFLite (INT8), FastAPI, Microsoft Presidio, Ollama / TinyLlama, spaCy, NLP |
-| **Systems & Embedded** | Qt Widgets, SFML, CMake, Arduino, TinkerCAD, Multithreading |
-| **Developer Tooling** | Git, GitHub, VS Code, Qt Creator, Android Studio, Kaggle |
-| **Core CS** | OOP, Data Structures & Algorithms, System Architecture, Memory Management |
+| **Languages** | Python, TypeScript, Dart, C++, JavaScript, SQL |
+| **AI / ML** | PyTorch, Hugging Face, TFLite (INT8), FastAPI, spaCy, NLP, LLM Integration |
+| **Full Stack Web** | TypeScript, Node.js, FastAPI, PostgreSQL, PLpgSQL |
+| **Mobile / Cross-Platform** | Flutter, Dart, GoRouter, Supabase, Firebase |
+| **Systems & Embedded** | Qt Widgets, SFML, CMake, Arduino, Multithreading |
+| **Infrastructure** | Git, GitHub, Docker, VS Code, Android Studio |
+| **Core CS** | OOP, Data Structures & Algorithms, System Design, Memory Management |
 
 </div>
 
 ---
 
 <!-- GITHUB STATS -->
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=rana-m-ahmed&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=8b949e&dates=8b949e" height="180" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=rana-m-ahmed&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=8b949e" />
 </p>
 
 ---
 
 <!-- FEATURED PROJECTS -->
-## 🚀 Featured Projects
+## Development Projects
+
 <!-- CROPWISE -->
 <details open>
-<summary><b>🌱 CropCrop: Edge AI Crop Disease Intelligence &nbsp;|&nbsp; PyTorch · Flutter · TFLite · EfficientNet &nbsp;|&nbsp; Active Research</b></summary>
+<summary><b>CropCrop: Edge AI Crop Disease Intelligence</b> | PyTorch · Flutter · TFLite · EfficientNet | Active Research</summary>
 <br/>
 
-> An end-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies directly on low-end Android hardware, no internet required. Edge-deployed and offline-first.
+End-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies on low-end Android hardware without internet. Production-ready edge inference engine.
 
 <p>
   <a href="https://www.kaggle.com/code/ranamuhammadahmed6/cropcop-model-training" target="_blank">
-    <img src="https://img.shields.io/badge/View_Kaggle_Notebook-20BEFF?style=flat-square&logo=kaggle&logoColor=white" alt="View Kaggle Notebook"/>
+    <img src="https://img.shields.io/badge/Kaggle_Notebook-20BEFF?style=flat-square&logo=kaggle&logoColor=white" />
   </a>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"/>
-  <img src="https://img.shields.io/badge/Phase_0-SSL_Complete-2d6e47?style=flat-square&logo=checkmarx&logoColor=white" alt="Phase 0 Complete"/>
-  <img src="https://img.shields.io/badge/Phase_1-SFT_Next-c47c1a?style=flat-square&logo=pytorch&logoColor=white" alt="Phase 1 Next"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Phase_0-SSL_Complete-2d6e47?style=flat-square" />
+  <img src="https://img.shields.io/badge/Phase_1-SFT_Next-c47c1a?style=flat-square" />
 </p>
 
-| | |
+| Metric | Value |
 |---|---|
-| **Accuracy** | Top-1: **90.41%** \| Macro F1: **90.39%** \| Top-5: **99.43%** |
-| **Performance** | GPU Inference: **16.8ms** |
-| **Model Size** | **48MB** (FP32) \| **12MB** (INT8) |
-| **Architecture** | EfficientNet-Lite4 Backbone |
-| **Resources** | Notebook, datasets, and backbone models available on [Kaggle](https://www.kaggle.com/code/ranamuhammadahmed6/cropcop-model-training) |
+| **Accuracy** | Top-1: 90.41% · Macro F1: 90.39% · Top-5: 99.43% |
+| **GPU Inference** | 16.8ms |
+| **Model Size** | 48MB (FP32) · 12MB (INT8 Quantized) |
+| **Architecture** | EfficientNet-Lite4 with custom multi-task heads |
 
 </details>
 
 <br/>
-<!-- LLM SECURITY GATEWAY -->
+
+<!-- SYNAPSE -->
 <details open>
-<summary><b>🛡️ LLM Security Gateway &nbsp;|&nbsp; Python · FastAPI · Microsoft Presidio · Ollama · spaCy &nbsp;|&nbsp; Mar 2026</b></summary>
+<summary><b>Synapse: AI Agent Deployment Platform</b> | Python · TypeScript · PostgreSQL · React | 2026</summary>
 <br/>
 
-> An AI security pipeline that intercepts and sanitises LLM prompts **before inference** — blocking jailbreaks, prompt injections, and PII leakage at the source.
+End-to-end suite for building, training, and deploying intelligent AI agents without infrastructure friction. Upload data, configure agent personas, deploy chat widgets with single-line integration.
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Microsoft_Presidio-0078D4?style=flat-square&logo=microsoft&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logoColor=white"/>
-  <img src="https://img.shields.io/badge/spaCy-09A3D5?style=flat-square&logo=spacy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
 </p>
 
-| | |
+| Aspect | Details |
 |---|---|
-| **Architecture** | 3-stage pipeline: injection detection → PII analysis → policy engine |
-| **PII Coverage** | Custom `PatternRecognizer` + context-aware boosters (+0.18) across **7 entity types** |
-| **Injection Defence** | Dual-tier regex detector — **14 patterns**, 1.12× compound multiplier |
-| **Threshold** | Optimised F1 score at **0.55** threshold |
-| **Inference** | Integrated TinyLlama 1.1B via Ollama; negligible pipeline overhead confirmed |
+| **Core Features** | Agent builder · Data ingestion · LLM integration · Chat widget deployment |
+| **Architecture** | Microservices with async task queue · Scalable inference |
+| **Deployment** | Single-line web widget integration |
+
+</details>
+
+<br/>
+
+<!-- READOUT -->
+<details open>
+<summary><b>ReadOut: B2B Analytics SaaS</b> | Python · TypeScript · PostgreSQL | 2026</summary>
+<br/>
+
+Analytics platform that answers back. Connect datasets, ask what changed, receive visual answers with reasoning. Enterprise-grade data intelligence platform.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
+</p>
+
+| Feature | Implementation |
+|---|---|
+| **Query Engine** | Natural language to SQL translation |
+| **Visualizations** | Automated chart generation with insights |
+| **Data Integration** | Multi-source dataset support |
+
+</details>
+
+<br/>
+
+<!-- HAUL -->
+<details open>
+<summary><b>Haul: E-Commerce Marketplace</b> | Flutter · Python · Stripe · Supabase | 2025-2026</summary>
+<br/>
+
+Android-first Flutter commerce platform built on visual search, personalized recommendations, resilient offline state, and server-authoritative Stripe test checkout.
+
+<p>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Stripe-626FD9?style=flat-square&logo=stripe&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+</p>
+
+| Capability | Details |
+|---|---|
+| **Visual Search** | Image-based product discovery |
+| **Recommendations** | ML-driven personalization engine |
+| **Offline Support** | Sync-enabled local caching |
+| **Payment** | Stripe test integration with full PCI compliance |
 
 </details>
 
@@ -172,25 +219,24 @@ class RanaMuhammadAhmed:
 
 <!-- WASFA -->
 <details open>
-<summary><b>🏥 Wasfa Diagnostic LMS &nbsp;|&nbsp; Flutter · Supabase · GoRouter · Flutter Quill &nbsp;|&nbsp; 2025–2026</b></summary>
+<summary><b>Wasfa Diagnostic LMS</b> | Flutter · Supabase · GoRouter | 2025–2026</summary>
 <br/>
 
-> Cross-platform LMS (web, mobile, desktop) for a live diagnostic centre — currently serving real patients in production.
+Production LMS serving live diagnostic centre. Cross-platform (web, mobile, desktop) system currently handling 400+ patient intakes daily.
 
 <p>
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Production-Live-brightgreen?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Production-Live-brightgreen?style=flat-square" />
 </p>
 
-| | |
+| Metric | Result |
 |---|---|
-| **Scale** | **400+ patient intakes/day** digitised |
-| **Speed Gain** | ~65% reduction in registration time via MRN/name/phone search + auto-fill |
-| **Report Editor** | Flutter Quill + PDF export; clinician turnaround cut to **<5 minutes** |
-| **Auth** | GoRouter + Supabase — **99%+ uptime**, <2 sec median login |
-| **UI** | Material 3, fully responsive across web, mobile, and desktop |
+| **Daily Scale** | 400+ patient intakes digitised |
+| **Speed Improvement** | 65% reduction in registration time via MRN/name/phone search + auto-fill |
+| **Report Turnaround** | <5 minutes via Flutter Quill + PDF export |
+| **Uptime** | 99%+ with <2 sec median login |
 
 </details>
 
@@ -198,116 +244,58 @@ class RanaMuhammadAhmed:
 
 <!-- COMPRESSO -->
 <details open>
-<summary><b>🗜️ <a href="https://github.com/rana-m-ahmed/compresso">Compresso</a> &nbsp;|&nbsp; C++ · Qt Widgets · CMake · Multithreading &nbsp;|&nbsp; May 2025</b></summary>
+<summary><b><a href="https://github.com/rana-m-ahmed/compresso">Compresso: File Compression Engine</a></b> | C++ · Qt Widgets · CMake | May 2025</summary>
 <br/>
 
-> Folder-based file compression tool implementing Canonical Huffman Coding — from scratch, no libraries.
+Folder-based file compression tool implementing Canonical Huffman Coding from scratch. Multithreaded processing with custom binary format and guaranteed decompression integrity.
 
 <p>
-  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=qt&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=qt&logoColor=white" />
+  <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" />
 </p>
 
-| | |
+| Specification | Value |
 |---|---|
-| **Compression** | **45–60% file size reduction** via optimised character frequency analysis |
-| **Engine** | Multithreaded processing of 100+ files with custom binary format |
-| **Integrity** | Header structures guarantee decompression accuracy |
+| **Compression Ratio** | 45–60% file size reduction |
+| **Architecture** | Multithreaded processing for 100+ files |
+| **Integrity** | Header structures guarantee accurate decompression |
 
 </details>
 
 <br/>
-
-<!-- EAGLE EYE -->
-<details open>
-<summary><b>📡 Eagle Eye – Proximity Radar &nbsp;|&nbsp; C · Arduino · Processing IDE &nbsp;|&nbsp; Dec 2024</b></summary>
-<br/>
-
-> Hardware-software radar prototype bridging embedded systems with a real-time GUI.
-
-<p>
-  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Processing_IDE-006699?style=flat-square&logoColor=white"/>
-</p>
-
-| | |
-|---|---|
-| **Sensor** | HC-SR04 ultrasonic + 180° servo motor |
-| **Interface** | Real-time radar GUI via Processing IDE over serial at 9600 baud |
-| **Alert System** | 4-band proximity zones (LEDs + buzzers at <10, 10–20, 20–40, >40 cm) |
-
-</details>
-
-<br/>
-
-<!-- EPIANO -->
-<details open>
-<summary><b>🎹 <a href="https://github.com/rana-m-ahmed/ePiano">ePiano</a> &nbsp;|&nbsp; C++ · SFML &nbsp;|&nbsp; Jun 2024</b></summary>
-<br/>
-
-> Real-time virtual piano simulator with audio synthesis across 4 octaves and 48 keys.
-
-<p>
-  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
-  <img src="https://img.shields.io/badge/SFML-8CC445?style=flat-square&logo=sfml&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Downloads-200+-blue?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Rating-4.2%2F5-yellow?style=flat-square"/>
-</p>
-
-| | |
-|---|---|
-| **Latency** | **<10 ms** audio synthesis latency |
-| **Keys** | 4 octaves, 48 keys, event-driven architecture |
-| **Reception** | 200+ downloads · 4.2/5 rating on university forum |
-
-</details>
-
-<br/>
-
-<!-- WEB ORATOR -->
-<details open>
-<summary><b>🗣️ <a href="https://github.com/rana-m-ahmed/TextToSpeechApp">Web Orator</a> &nbsp;|&nbsp; JavaScript · Web Speech API &nbsp;|&nbsp; Aug 2024</b></summary>
-<br/>
-
-> Accessibility-focused TTS web app — built as a community service project for individuals with speech impairments.
-
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Web_Speech_API-4285F4?style=flat-square&logo=google-chrome&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Impact-Community_Service-brightgreen?style=flat-square"/>
-</p>
-
-| | |
-|---|---|
-| **Impact** | Deployed at a special needs centre; served **50+ users** |
-| **Feedback** | 90% positive rating |
-| **Coverage** | 10+ languages, adjustable speech rate |
-
-</details>
 
 ---
 
-<!-- MORE PROJECTS TABLE -->
-## 📦 More Projects
+## Research Work
 
-<div align="center">
+<!-- MCP PRIVILEGE AGGREGATION -->
+<details open>
+<summary><b>Research on MCP Privilege Aggregation</b> | Python · Jupyter Notebooks · Research Infrastructure</summary>
+<br/>
 
-| Project | Stack | Highlights |
-|:---|:---:|:---|
-| [🏋️ Flutter Expense Tracker](https://github.com/rana-m-ahmed/flutter_expense_tracker) | Flutter · SQLite · FL Chart | 1000+ transaction records, visual budget analytics |
-| [🍽️ Flutter Meals App](https://github.com/rana-m-ahmed/flutter_meals_app) | Flutter · Dart | Recipe categorisation, favourites, advanced filter system |
-| [🌤️ Weather Dashboard](https://github.com/rana-m-ahmed/Weather-Application) | JavaScript · OpenWeatherMap API | Live data, condition-based theming, error handling |
-| [🧩 Maze Puzzle Game](https://github.com/rana-m-ahmed) | C++ · SFML · DFS | 15+ difficulty-scaled levels, DFS pathfinding, local leaderboard |
-| [🏥 Medical Info System](https://github.com/rana-m-ahmed/medical-info-system) | C++ | Patient record management, structured data storage |
+Foundational research exploring privilege aggregation mechanisms in Model Context Protocol (MCP) systems. Initial scaffolding phase focusing on architectural patterns and security implications.
 
-</div>
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Research-Active-blue?style=flat-square" />
+</p>
+
+| Component | Focus |
+|---|---|
+| **Analysis** | Privilege escalation patterns in distributed agent systems |
+| **Documentation** | Jupyter-based exploration and hypothesis testing |
+| **Infrastructure** | Research scaffolding for experimental validation |
+
+</details>
+
+<br/>
 
 ---
 
 <!-- ACTIVITY GRAPH -->
-## 📈 Contribution Activity
+## Contribution Activity
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=rana-m-ahmed&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ff6b6b&area=true&hide_border=true&radius=8" width="100%"/>
@@ -316,35 +304,35 @@ class RanaMuhammadAhmed:
 ---
 
 <!-- ACHIEVEMENTS -->
-## 🏆 Achievements & Honours
+## Achievements
 
 <div align="center">
 
-| 🥇 Award | 📋 Details |
+| Award | Details |
 |:---|:---|
-| 🏆 **ICPC Asia Topi Regional 2025** | Team Lead · *The Pull Pirates* · **Ranked 73rd / 200+ teams** |
-| ⚡ **NESCON 2025 Speed Programming** | National-level · Team *The Pull Pirates* |
-| 🎖️ **Rector's Honours List** | Nominated for academic excellence — Fall 2025 |
-| 🏅 **Merit Scholarship** | Consecutive merit-based scholarships — CGPA 3.9 · 2024–Present |
+| ICPC Asia Topi Regional 2025 | Team Lead · The Pull Pirates · Ranked 73rd / 200+ teams |
+| NESCON 2025 Speed Programming | National-level competition · Team The Pull Pirates |
+| Rector's Honours List | Nominated for academic excellence — Fall 2025 |
+| Merit Scholarship | Consecutive merit-based scholarships — CGPA 3.89 · 2024–Present |
 
 </div>
 
 ---
 
 <!-- LEADERSHIP -->
-## 👑 Leadership
+## Leadership
 
 <table>
   <tr>
     <td width="50%">
-      <h3>🌍 BU GlobalX Student Ambassador</h3>
+      <h3>GlobalX Student Ambassador</h3>
       <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; <i>Feb 2026 – Present</i></p>
       <p>Selected via departmental nomination to represent Bahria University in global initiatives and facilitate student engagement in international scholarships and exchange programmes.</p>
     </td>
     <td width="50%">
-      <h3>⚔️ Competitive Programming Captain</h3>
+      <h3>Competitive Programming Captain</h3>
       <p><b>Team: The Pull Pirates</b> &nbsp;|&nbsp; <i>2024 – Present</i></p>
-      <p>Founded the team from scratch. Conduct weekly algorithmic training sessions. Serve dual role as coach and active contestant at ICPC Asia Regional and national-level competitions.</p>
+      <p>Founded and lead the team. Conduct weekly algorithmic training sessions. Active contestant at ICPC Asia Regional and national-level competitions.</p>
     </td>
   </tr>
 </table>
@@ -352,22 +340,22 @@ class RanaMuhammadAhmed:
 ---
 
 <!-- CERTIFICATIONS -->
-## 📜 Certifications
+## Certifications
 
 <div align="center">
 
-| 🎓 Certificate | 🏢 Issuer | 🔗 |
-|:---|:---:|:---:|
-| Flutter and Dart: Developing iOS, Android & Mobile Apps | **IBM** via Coursera | [Verify ↗](https://coursera.org/share/34154a75461834d0648a8a6e1d23d982) |
-| Mobile App Notifications, Databases & Publishing | **SkillUp** via Coursera | [Verify ↗](https://coursera.org/share/66fb385195f75b46622acce02328fc56) |
-| Getting Started with Flutter Development | **Google Cloud** via Coursera | [Verify ↗](https://coursera.org/share/fe00b10538d0bd8c4166d5c6513cbb73) |
+| Certificate | Issuer |
+|:---|:---:|
+| Flutter and Dart: Developing iOS, Android & Mobile Apps | IBM via Coursera |
+| Mobile App Notifications, Databases & Publishing | SkillUp via Coursera |
+| Getting Started with Flutter Development | Google Cloud via Coursera |
 
 </div>
 
 ---
 
 <!-- SNAKE ANIMATION -->
-## 🐍 Contribution Snake
+## Contribution Snake
 
 <p align="center">
   <picture>
@@ -390,5 +378,5 @@ class RanaMuhammadAhmed:
 </p>
 
 <p align="center">
-  <i>Building things that matter — one commit at a time. 🚀</i>
+  <i>Building intelligent systems that scale — one commit at a time.</i>
 </p>
