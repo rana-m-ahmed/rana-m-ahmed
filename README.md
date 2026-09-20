@@ -185,13 +185,13 @@ Selected among the university's student ambassadors supporting international aca
 
 ## Available for engineering work
 
-**Open to paid remote part-time, contract and high-impact internship opportunities.**
+**Open to paid remote contract, part-time and high-impact internship opportunities.**
 
 I am most useful where a team needs someone who can move across the stack rather than stop at a model or mockup:
 
 <code>AI Engineer</code> · <code>Applied AI / ML</code> · <code>Full-Stack AI</code> · <code>Python / Backend</code> · <code>Computer Vision / Edge AI</code>
 
-**Availability:** ~15–20 hours/week · **Location:** Islamabad, Pakistan · **Timezone:** UTC+05
+**Availability:** 30+ hours/week · **Location:** Islamabad, Pakistan · **Timezone:** UTC+05
 
 **Reach me:** [ranamuhammadahmed6@gmail.com](mailto:ranamuhammadahmed6@gmail.com) · [LinkedIn](https://linkedin.com/in/rana-muhammad-ahmed-571057295)
 
