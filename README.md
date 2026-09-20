@@ -2,12 +2,12 @@
   <img src="./assets/rma-signal.svg" alt="Rana Muhammad Ahmed — Applied AI and Software Engineer" width="100%" />
 </p>
 
-<p align="center">
-  <strong>I build AI-powered products end to end — from models, RAG and agent workflows to secure APIs, web/mobile interfaces and deployable runtimes.</strong>
+<p align="justify">
+  <strong>I build AI-powered products end to end — from models, RAG and agent workflows to secure APIs, production-minded backends, polished web/mobile interfaces and deployable runtimes.</strong> I enjoy owning the difficult middle between an idea and a working system: turning ambiguous requirements into architecture, wiring the data and inference layers together, validating failure paths, and shipping something people can actually use.
 </p>
 
-<p align="center">
-  I like owning the whole path from idea to working system. My research background is the layer underneath: it shapes how I evaluate, test and harden what I ship.
+<p align="justify">
+  My research work sits underneath that engineering rather than replacing it. It has trained me to question benchmarks, trace evidence, test assumptions and make claims that survive scrutiny — habits I carry directly into product development, AI security, model evaluation and deployment.
 </p>
 
 <p align="center">
@@ -131,11 +131,11 @@ CropCop moves through the full ML delivery chain: **117,546 source images audite
 
 ## Industry experience
 
-**2026 — now · Pakistan Telecommunication Authority (PTA), Headquarters**  
+**Aug–Sep 2026 · Pakistan Telecommunication Authority (PTA), Headquarters**  
 **ICT Intern — Enterprise ICT, AI, Governance & DevOps**  
-Working around reliability, auditability, data handling, AI governance and the DevOps/change-management practices required to move enterprise and public-sector systems into resilient production environments.
+Completed an ICT internship focused on how large-scale telecom and public-sector systems are operated reliably: enterprise AI governance, auditability, data handling, DevOps, CI/CD and change-management practices for production environments.
 
-**2026 · EaseZen Solutions**  
+**Jan–Mar 2026 · EaseZen Solutions**  
 **AI/ML Intern**  
 Worked across dataset preparation, model training and evaluation, error analysis, and the conversion of experimental workflows into reusable engineering pipelines.
 
@@ -154,7 +154,7 @@ Worked across dataset preparation, model training and evaluation, error analysis
 
 ## Research depth
 
-Research is not the destination of this profile; it is an engineering advantage. I use it to make stronger decisions around evaluation, reproducibility, failure analysis, security and model/runtime evidence.
+Research is an engineering advantage for me: a way to make better decisions about evaluation, reproducibility, failure analysis, security and the evidence behind a system.
 
 **[Labels Are Not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation](https://arxiv.org/abs/2608.12880)**  
 Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
@@ -163,6 +163,10 @@ Audits treatment-contaminated behavioral endpoints in a closed MCP-style agent-s
 **[CropCop: An Auditable 120-Class Plant-Health Model from Benchmark Reconstruction to a Quantised Runtime Artifact](https://arxiv.org/abs/2608.25539)**  
 Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
 Connects leakage-aware dataset reconstruction, compact-model evaluation, post-training quantisation and direct execution of the serialized runtime artifact.
+
+**[HiSPA Robotics v3.1 — Mamba-based Robotic Controller Security](https://github.com/rana-m-ahmed/Research-Work-Adversarial-Amnesia-Hidden-State-Poisoning-in-Mamba-Based-Robotic-Controllers)**  
+Ongoing research infrastructure · 2026  
+An isolated, fail-closed clean reimplementation for studying adversarial-amnesia / hidden-state-poisoning questions around Mamba-based robotic controllers. The current public repository intentionally contains **no scientific results yet** and keeps later experimental workflows unauthorized by default until the repository and dataset-lineage gates are satisfied.
 
 ---
 
