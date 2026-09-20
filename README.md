@@ -191,12 +191,11 @@ An isolated, fail-closed clean reimplementation for studying adversarial-amnesia
 
 - **Rector's Honour List**
 - **University Merit Scholar**
-- **Orange Tree Foundation Scholar**
 - Coursework spanning **Artificial Intelligence, Data Structures & Algorithms, Database Systems, Computer Networks, Software Engineering and Linear Algebra**
 
 ### Academic signal
 
-<code>3.89 / 4.00 CGPA</code> · <code>#1 cohort rank</code> · <code>Merit scholarship</code> · <code>Need-based scholarship</code> · <code>Honour List</code>
+<code>3.89 / 4.00 CGPA</code> · <code>#1 cohort rank</code> · <code>Merit scholarship</code> · <code>Honour List</code>
 
 ---
 
@@ -237,5 +236,5 @@ I am most useful where a team needs someone who can move across the stack rather
 ---
 
 <p align="center">
-  <sub>RMA / MODEL → API → PRODUCT → SHIP</sub>
+  <sub>MODEL → API → PRODUCT → SHIP</sub>
 </p>
