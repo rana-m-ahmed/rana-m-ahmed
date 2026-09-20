@@ -1,382 +1,269 @@
-<!-- HEADER BANNER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1a2e,100:16213e&height=200&section=header&text=Rana%20Muhammad%20Ahmed&fontSize=42&fontColor=58a6ff&fontAlignY=38&desc=AI%20Full%20Stack%20Engineer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,45:111827,100:2563EB&height=190&section=header&text=Rana%20Muhammad%20Ahmed&fontSize=42&fontColor=FFFFFF&fontAlignY=36&desc=AI%20Engineer%20%E2%80%A2%20Researcher%20%E2%80%A2%20Full-Stack%20Builder&descSize=17&descAlignY=58" width="100%" alt="Rana Muhammad Ahmed" />
 </p>
 
-<!-- TYPING SVG -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=AI+Full+Stack+Engineer;PyTorch+%7C+Flutter+%7C+TypeScript+%7C+Production+Systems" />
-</p>
-
-<!-- SOCIAL BADGES -->
 <p align="center">
   <a href="https://linkedin.com/in/rana-muhammad-ahmed-571057295">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:ranamuhammadahmed6@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://github.com/rana-m-ahmed">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/GitHub-rana--m--ahmed-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=rana-m-ahmed&color=58a6ff&style=for-the-badge&label=PROFILE+VIEWS" />
+  <img src="https://komarev.com/ghpvc/?username=rana-m-ahmed&style=flat-square&color=2563EB&label=Profile+views" alt="Profile views" />
+</p>
+
+<p align="center">
+  <b>Building reliable AI systems from research question to deployed product.</b>
+</p>
+
+<p align="center">
+  Computer Science undergraduate at <b>Bahria University Islamabad</b> working across
+  <b>AI-agent security & evaluation</b>, <b>computer vision & edge AI</b>, and
+  <b>full-stack AI products</b>.
 </p>
 
 ---
 
-<!-- ABOUT ME -->
-## About Me
+## Snapshot
 
-```python
-class RanaMuhammadAhmed:
-    def __init__(self):
-        self.name       = "Rana Muhammad Ahmed"
-        self.title      = "AI Full Stack Engineer"
-        self.university = "Bahria University Islamabad"
-        self.cgpa       = 3.89
-        self.location   = "Rawalpindi, Pakistan"
-        self.background = "Pre-Medical → Computer Science"
+| | |
+|---|---|
+| **Academics** | BS Computer Science · **CGPA 3.89/4.00** · Rector's Honour List · University Merit & Orange Tree Foundation Scholar |
+| **Research** | **2 first-author arXiv preprints** spanning AI-agent security/evaluation and auditable edge-AI deployment |
+| **Engineering** | Python · C++ · TypeScript · FastAPI · Next.js/React · Flutter · PostgreSQL · Docker · CI/CD |
+| **Industry** | ICT Intern at **Pakistan Telecommunication Authority (PTA) HQ** · prior AI/ML internship |
+| **Competitive CS** | Founder & Captain, **The Pull Pirates** · represented Bahria University at **ICPC Asia Topi Regional 2025** |
+| **Leadership** | **BU GlobalX Student Ambassador** · selected as one of 14 university ambassadors |
 
-    @property
-    def currently(self):
-        return [
-            "Building end-to-end AI systems from data pipeline to production deployment",
-            "Researching privilege aggregation mechanisms in MCP systems",
-            "Shipping cross-platform applications at scale (400+ users/day)",
-            "Competing at ICPC Asia Regional level",
-            "Global Student Ambassador @ Bahria University",
-        ]
-```
+> **Open to remote part-time / contract opportunities** in AI engineering, ML systems, research engineering, AI security/evaluation, and full-stack AI product development.
 
 ---
-<!-- EDUCATION -->
-## Education
+
+## What I work on
+
+- **Reliable AI evaluation** — benchmark integrity, treatment leakage, endpoint validity, reproducible experiments, failure analysis, and evidence-backed claims.
+- **Edge & computer vision systems** — dataset auditing, transfer learning, quantisation, runtime validation, and deployment under resource constraints.
+- **Agentic & retrieval systems** — RAG, vector search, tool-use security, prompt-injection defenses, policy enforcement, and multi-tenant AI platforms.
+- **Product engineering** — taking ideas from backend/API and data layer through polished web/mobile interfaces, testing, deployment, and observability.
+
+---
+
+## Featured work
 
 <table>
-  <tr>
-    <td width="50%">
-      <h3>B.S. Computer Science</h3>
-      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; 2024 – Expected Dec 2027</p>
-      <ul>
-        <li>CGPA: <b>3.89 / 4.0</b></li>
-        <li>Rector's Honours List — Fall 2025</li>
-        <li>DSA · OOP · DB Systems · Software Engineering · AI · Computer Architecture · Digital Logic Design</li>
-      </ul>
-    </td>
-    <td width="50%">
-      <h3>FSC Pre-Medical</h3>
-      <p><b>Kips College, Rawalpindi</b> &nbsp;|&nbsp; 2021 – 2023</p>
-      <ul>
-        <li>Grade: <b>A1</b></li>
-        <li>Rigorous analytical foundation in sciences</li>
-        <li>Pivoted fully into Computer Science — best decision ever made</li>
-      </ul>
-    </td>
-  </tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🌿 [CropCop](https://github.com/rana-m-ahmed/ResearchWork-CropCop)
+**Auditable computer vision → quantised edge runtime**
+
+Audited **117,546 images** and reconstructed a leakage-controlled benchmark of **109,107 images across 120 plant-health classes**.
+
+- **98.46%** executed-runtime internal-test accuracy
+- **22.60 MiB** ExecuTorch/XNNPACK PTE artifact
+- Validation-only post-training quantisation
+- Direct runtime execution + row-level evidence chain
+
+[Paper](https://arxiv.org/abs/2608.25539) · [Repository](https://github.com/rana-m-ahmed/ResearchWork-CropCop)
+
+<code>PyTorch</code> <code>ExecuTorch</code> <code>XNNPACK</code> <code>Computer Vision</code> <code>Edge AI</code>
+
+</td>
+<td width="50%" valign="top">
+
+### 🛡️ [Labels Are Not Endpoints](https://github.com/rana-m-ahmed/ResearchWork-on-Mcp-Privilege-Aggregation)
+**AI-agent security & evaluation integrity**
+
+Audited a **10,200-record** MCP-style agent-security campaign and identified treatment leakage that contaminated the historical security endpoint.
+
+- Reconstructed treatment-blind behavioral evaluation
+- Introduced a treatment-invariance audit
+- Preserved execution traces and reproducibility controls
+- Built endpoint-integrity validation infrastructure
+
+[Paper](https://arxiv.org/abs/2608.12880) · [Repository](https://github.com/rana-m-ahmed/ResearchWork-on-Mcp-Privilege-Aggregation)
+
+<code>Python</code> <code>AI Security</code> <code>Agents</code> <code>Evaluation</code> <code>Reproducibility</code>
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🧠 [Synapse](https://github.com/rana-m-ahmed/Synapse)
+**Multi-tenant RAG agent platform**
+
+Built an end-to-end platform for turning private documents into deployable AI support agents.
+
+- Document ingestion, chunking & embeddings
+- PostgreSQL + pgvector/HNSW retrieval
+- Supabase Auth + row-level tenant isolation
+- Streaming responses, analytics & embeddable widget
+
+<code>FastAPI</code> <code>Next.js</code> <code>Supabase</code> <code>pgvector</code> <code>RAG</code>
+
+</td>
+<td width="50%" valign="top">
+
+### 🔐 [Anti-LLM Injection Gateway](https://github.com/rana-m-ahmed/Anti-LLM-Injection-Gateway)
+**Pre-inference safety & policy layer for LLM apps**
+
+Built a modular gateway that turns prompt-injection signals, PII and secret detection into explainable policy decisions before model execution.
+
+- Block / Warn / Mask / Allow policy engine
+- Prompt-injection & encoding-attack detection
+- Microsoft Presidio + custom secret recognizers
+- FastAPI service with structured diagnostics and QA
+
+<code>FastAPI</code> <code>Presidio</code> <code>LLM Security</code> <code>Policy Enforcement</code>
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 📊 [ReadOut](https://github.com/rana-m-ahmed/ReadOut-B2B-Analytics-SaaS)
+**Analytics that answers back**
+
+A B2B analytics product for asking natural-language questions over uploaded data and receiving grounded visual answers.
+
+- Next.js 16 / React 19 frontend
+- Python API + Supabase backend
+- Schema-grounded analysis and visualisation
+- Vitest, Playwright and axe-core validation
+
+<code>Next.js</code> <code>Python</code> <code>Supabase</code> <code>Playwright</code> <code>Data Analytics</code>
+
+</td>
+<td width="50%" valign="top">
+
+### 🩻 OrthoLens
+**AI-assisted fracture analysis prototype**
+
+Built a DenseNet121-based radiograph inference system with explainability and a production-style web surface.
+
+- Prediction API with structured probabilities
+- Grad-CAM visual explanations
+- Thread-safe model service + Docker backend
+- Next.js clinical-review frontend
+
+[Backend](https://github.com/rana-m-ahmed/ortholens-backend) · [Frontend](https://github.com/rana-m-ahmed/ortholens-frontend) · [Live](https://ortholens-ai.vercel.app/)
+
+<code>TensorFlow/Keras</code> <code>Computer Vision</code> <code>Grad-CAM</code> <code>Next.js</code> <code>Docker</code>
+
+</td>
+</tr>
 </table>
 
----
-<!-- TECH STACK -->
-## Tech Stack
+### More engineering
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=cpp,python,dart,typescript,html,css,sql&perline=7&theme=dark" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=pytorch,fastapi,flutter,supabase,nodejs,git,github,vscode,androidstudio&perline=9&theme=dark" />
-</p>
-
-<br/>
-
-<div align="center">
-
-| Domain | Tools |
-|:---:|:---|
-| **Languages** | Python, TypeScript, Dart, C++, JavaScript, SQL |
-| **AI / ML** | PyTorch, Hugging Face, TFLite (INT8), FastAPI, spaCy, NLP, LLM Integration |
-| **Full Stack Web** | TypeScript, Node.js, FastAPI, PostgreSQL, PLpgSQL |
-| **Mobile / Cross-Platform** | Flutter, Dart, GoRouter, Supabase, Firebase |
-| **Systems & Embedded** | Qt Widgets, SFML, CMake, Arduino, Multithreading |
-| **Infrastructure** | Git, GitHub, Docker, VS Code, Android Studio |
-| **Core CS** | OOP, Data Structures & Algorithms, System Design, Memory Management |
-
-</div>
+| Project | What it demonstrates | Stack |
+|---|---|---|
+| [**Haul**](https://github.com/rana-m-ahmed/Haul-Ecommerce-Marketplace) | Android-first commerce app with visual search, recommendations, resilient local state and server-authoritative Stripe checkout | Flutter · FastAPI · Firebase · Stripe |
+| [**AIDRA**](https://github.com/rana-m-ahmed/Intelligent-Disaster-Response-Agent) | Hybrid disaster-response system combining risk-aware A*, CSP/MRV, fuzzy reasoning, ML and a real-time dashboard | Python · Flask · Socket.IO · AI |
+| [**Compresso**](https://github.com/rana-m-ahmed/Compresso) | Canonical Huffman compression, custom binary storage, directory reconstruction and multithreaded desktop processing | C++17 · Qt · CMake |
+| [**TPU Systolic Array Visualizer**](https://github.com/rana-m-ahmed/TPU-Systolic-Array-Visualizer) | Cycle-by-cycle browser simulation of TPU-style matrix multiplication and dataflow | React · TypeScript · Vite · Vitest |
 
 ---
 
-<!-- GITHUB STATS -->
-## GitHub Stats
+## Research
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=rana-m-ahmed&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=8b949e" />
-</p>
+### [Labels Are Not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation](https://arxiv.org/abs/2608.12880)
+**Rana Muhammad Ahmed, Sabahat Abbas** · arXiv preprint · 2026
+
+Identifies treatment-contaminated agent-security endpoints and introduces treatment-invariance analysis with corrected behavioral evaluation.
+
+### [CropCop: An Auditable 120-Class Plant-Health Model from Benchmark Reconstruction to a Quantised Runtime Artifact](https://arxiv.org/abs/2608.25539)
+**Rana Muhammad Ahmed, Sabahat Abbas** · arXiv preprint · 2026
+
+Connects leakage-controlled benchmark reconstruction, compact-model evaluation, validation-only quantisation, and direct runtime verification in one auditable evidence chain.
 
 ---
 
-<!-- FEATURED PROJECTS -->
-## Development Projects
+## Experience
 
-<!-- CROPWISE -->
-<details open>
-<summary><b>CropCrop: Edge AI Crop Disease Intelligence</b> | PyTorch · Flutter · TFLite · EfficientNet | Active Research</summary>
-<br/>
+**ICT Intern — Enterprise ICT, AI, Governance & DevOps**  
+*Pakistan Telecommunication Authority (PTA), Headquarters · Aug 2026 – Present*
 
-End-to-end self-supervised + multi-task learning pipeline for diagnosing plant diseases, pest damage, and nutrient deficiencies on low-end Android hardware without internet. Production-ready edge inference engine.
+- Studying reliability, governance, data handling, auditability and human oversight for enterprise/public-sector AI systems.
+- Reviewing DevOps, CI/CD and change-management practices used to move systems into resilient production environments.
 
-<p>
-  <a href="https://www.kaggle.com/code/ranamuhammadahmed6/cropcop-model-training" target="_blank">
-    <img src="https://img.shields.io/badge/Kaggle_Notebook-20BEFF?style=flat-square&logo=kaggle&logoColor=white" />
-  </a>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-  <img src="https://img.shields.io/badge/Phase_0-SSL_Complete-2d6e47?style=flat-square" />
-  <img src="https://img.shields.io/badge/Phase_1-SFT_Next-c47c1a?style=flat-square" />
+**AI/ML Intern**  
+*EaseZen Solutions · Jan 2026 – Mar 2026*
+
+- Worked on dataset preparation, model training/evaluation and error analysis for applied ML workflows.
+- Helped turn experimental notebooks into reusable and documented engineering pipelines.
+
+---
+
+## Technical toolkit
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,ts,js,dart,pytorch,tensorflow,react,nextjs,fastapi,flutter,postgres,supabase,firebase,docker,git,github,linux&perline=9&theme=dark" alt="Technical stack" />
 </p>
 
-| Metric | Value |
+| Area | Tools & concepts |
 |---|---|
-| **Accuracy** | Top-1: 90.41% · Macro F1: 90.39% · Top-5: 99.43% |
-| **GPU Inference** | 16.8ms |
-| **Model Size** | 48MB (FP32) · 12MB (INT8 Quantized) |
-| **Architecture** | EfficientNet-Lite4 with custom multi-task heads |
-
-</details>
-
-<br/>
-
-<!-- SYNAPSE -->
-<details open>
-<summary><b>Synapse: AI Agent Deployment Platform</b> | Python · TypeScript · PostgreSQL · React | 2026</summary>
-<br/>
-
-End-to-end suite for building, training, and deploying intelligent AI agents without infrastructure friction. Upload data, configure agent personas, deploy chat widgets with single-line integration.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
-</p>
-
-| Aspect | Details |
-|---|---|
-| **Core Features** | Agent builder · Data ingestion · LLM integration · Chat widget deployment |
-| **Architecture** | Microservices with async task queue · Scalable inference |
-| **Deployment** | Single-line web widget integration |
-
-</details>
-
-<br/>
-
-<!-- READOUT -->
-<details open>
-<summary><b>ReadOut: B2B Analytics SaaS</b> | Python · TypeScript · PostgreSQL | 2026</summary>
-<br/>
-
-Analytics platform that answers back. Connect datasets, ask what changed, receive visual answers with reasoning. Enterprise-grade data intelligence platform.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" />
-</p>
-
-| Feature | Implementation |
-|---|---|
-| **Query Engine** | Natural language to SQL translation |
-| **Visualizations** | Automated chart generation with insights |
-| **Data Integration** | Multi-source dataset support |
-
-</details>
-
-<br/>
-
-<!-- HAUL -->
-<details open>
-<summary><b>Haul: E-Commerce Marketplace</b> | Flutter · Python · Stripe · Supabase | 2025-2026</summary>
-<br/>
-
-Android-first Flutter commerce platform built on visual search, personalized recommendations, resilient offline state, and server-authoritative Stripe test checkout.
-
-<p>
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Stripe-626FD9?style=flat-square&logo=stripe&logoColor=white" />
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
-</p>
-
-| Capability | Details |
-|---|---|
-| **Visual Search** | Image-based product discovery |
-| **Recommendations** | ML-driven personalization engine |
-| **Offline Support** | Sync-enabled local caching |
-| **Payment** | Stripe test integration with full PCI compliance |
-
-</details>
-
-<br/>
-
-<!-- WASFA -->
-<details open>
-<summary><b>Wasfa Diagnostic LMS</b> | Flutter · Supabase · GoRouter | 2025–2026</summary>
-<br/>
-
-Production LMS serving live diagnostic centre. Cross-platform (web, mobile, desktop) system currently handling 400+ patient intakes daily.
-
-<p>
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
-  <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" />
-  <img src="https://img.shields.io/badge/Production-Live-brightgreen?style=flat-square" />
-</p>
-
-| Metric | Result |
-|---|---|
-| **Daily Scale** | 400+ patient intakes digitised |
-| **Speed Improvement** | 65% reduction in registration time via MRN/name/phone search + auto-fill |
-| **Report Turnaround** | <5 minutes via Flutter Quill + PDF export |
-| **Uptime** | 99%+ with <2 sec median login |
-
-</details>
-
-<br/>
-
-<!-- COMPRESSO -->
-<details open>
-<summary><b><a href="https://github.com/rana-m-ahmed/compresso">Compresso: File Compression Engine</a></b> | C++ · Qt Widgets · CMake | May 2025</summary>
-<br/>
-
-Folder-based file compression tool implementing Canonical Huffman Coding from scratch. Multithreaded processing with custom binary format and guaranteed decompression integrity.
-
-<p>
-  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=qt&logoColor=white" />
-  <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" />
-</p>
-
-| Specification | Value |
-|---|---|
-| **Compression Ratio** | 45–60% file size reduction |
-| **Architecture** | Multithreaded processing for 100+ files |
-| **Integrity** | Header structures guarantee accurate decompression |
-
-</details>
-
-<br/>
+| **Languages** | Python · C++ · TypeScript/JavaScript · Dart · SQL |
+| **ML / Edge AI** | PyTorch · TensorFlow/Keras · Hugging Face · scikit-learn · OpenCV · transfer learning · PTQ · ExecuTorch/XNNPACK |
+| **Agents / AI Security** | RAG · tool-use analysis · prompt-injection evaluation · authorization · PII/secret detection · pgvector/HNSW |
+| **Backend / Data** | FastAPI · PostgreSQL · Supabase · Firebase · REST APIs · vector search |
+| **Web / Mobile** | Next.js · React · Flutter · Tailwind CSS |
+| **Engineering** | Docker · Git/GitHub · Linux · CI/CD · pytest · Playwright · Vitest |
+| **Research** | Experimental design · benchmark auditing · reproducible pipelines · error/failure analysis · calibration · technical literature review |
 
 ---
 
-## Research Work
+## Education & honours
 
-<!-- MCP PRIVILEGE AGGREGATION -->
-<details open>
-<summary><b>Research on MCP Privilege Aggregation</b> | Python · Jupyter Notebooks · Research Infrastructure</summary>
-<br/>
+**B.S. Computer Science — Bahria University Islamabad**  
+*2024 – Expected Dec 2027 · CGPA: **3.89 / 4.00***
 
-Foundational research exploring privilege aggregation mechanisms in Model Context Protocol (MCP) systems. Initial scaffolding phase focusing on architectural patterns and security implications.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Jupyter-F37726?style=flat-square&logo=jupyter&logoColor=white" />
-  <img src="https://img.shields.io/badge/Research-Active-blue?style=flat-square" />
-</p>
-
-| Component | Focus |
-|---|---|
-| **Analysis** | Privilege escalation patterns in distributed agent systems |
-| **Documentation** | Jupyter-based exploration and hypothesis testing |
-| **Infrastructure** | Research scaffolding for experimental validation |
-
-</details>
-
-<br/>
+- Ranked **1st in the Spring 2024 BSCS cohort**
+- **University Merit Scholar**
+- **Orange Tree Foundation Scholar**
+- **Rector's Honour List**
+- Coursework includes Artificial Intelligence, Data Structures & Algorithms, Database Systems, Computer Networks, Software Engineering and Linear Algebra
 
 ---
 
-<!-- ACTIVITY GRAPH -->
-## Contribution Activity
+## Leadership & beyond code
+
+**Founder & Captain — The Pull Pirates**  
+Founded and lead a competitive-programming team representing Bahria University at ICPC and national competitions.
+
+**BU GlobalX Student Ambassador**  
+Selected as one of **14 university ambassadors** supporting STEM outreach, international engagement and student access to global academic/professional opportunities.
+
+**Community & accessibility**  
+Contributed to university community-service initiatives and built a text-to-speech accessibility tool for users with visual impairments and reading difficulties.
+
+**Sport**  
+Competed in badminton and cricket at inter-university events including NUST Olympiad and NESCON.
+
+---
+
+## Let's connect
+
+I enjoy working where **research rigor meets practical engineering** — especially reliable AI, agent systems, edge ML, computer vision and products that need to move from prototype to deployment.
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rana-m-ahmed&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ff6b6b&area=true&hide_border=true&radius=8" width="100%"/>
-</p>
-
----
-
-<!-- ACHIEVEMENTS -->
-## Achievements
-
-<div align="center">
-
-| Award | Details |
-|:---|:---|
-| ICPC Asia Topi Regional 2025 | Team Lead · The Pull Pirates · Ranked 73rd / 200+ teams |
-| NESCON 2025 Speed Programming | National-level competition · Team The Pull Pirates |
-| Rector's Honours List | Nominated for academic excellence — Fall 2025 |
-| Merit Scholarship | Consecutive merit-based scholarships — CGPA 3.89 · 2024–Present |
-
-</div>
-
----
-
-<!-- LEADERSHIP -->
-## Leadership
-
-<table>
-  <tr>
-    <td width="50%">
-      <h3>GlobalX Student Ambassador</h3>
-      <p><b>Bahria University Islamabad</b> &nbsp;|&nbsp; <i>Feb 2026 – Present</i></p>
-      <p>Selected via departmental nomination to represent Bahria University in global initiatives and facilitate student engagement in international scholarships and exchange programmes.</p>
-    </td>
-    <td width="50%">
-      <h3>Competitive Programming Captain</h3>
-      <p><b>Team: The Pull Pirates</b> &nbsp;|&nbsp; <i>2024 – Present</i></p>
-      <p>Founded and lead the team. Conduct weekly algorithmic training sessions. Active contestant at ICPC Asia Regional and national-level competitions.</p>
-    </td>
-  </tr>
-</table>
-
----
-
-<!-- CERTIFICATIONS -->
-## Certifications
-
-<div align="center">
-
-| Certificate | Issuer |
-|:---|:---:|
-| Flutter and Dart: Developing iOS, Android & Mobile Apps | IBM via Coursera |
-| Mobile App Notifications, Databases & Publishing | SkillUp via Coursera |
-| Getting Started with Flutter Development | Google Cloud via Coursera |
-
-</div>
-
----
-
-<!-- SNAKE ANIMATION -->
-## Contribution Snake
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/rana-m-ahmed/rana-m-ahmed/output/github-contribution-grid-snake-dark.svg" />
-  </picture>
-</p>
-
----
-
-<!-- QUOTE -->
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" />
-</p>
-
-<!-- FOOTER BANNER -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:16213e,50:1a1a2e,100:0d1117&height=120&section=footer" width="100%"/>
+  <a href="mailto:ranamuhammadahmed6@gmail.com"><b>Email</b></a>
+  &nbsp;•&nbsp;
+  <a href="https://linkedin.com/in/rana-muhammad-ahmed-571057295"><b>LinkedIn</b></a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/rana-m-ahmed"><b>GitHub</b></a>
 </p>
 
 <p align="center">
-  <i>Building intelligent systems that scale — one commit at a time.</i>
+  <sub>Islamabad, Pakistan · Open to remote collaboration and part-time / contract engineering opportunities.</sub>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,55:111827,100:0D1117&height=95&section=footer" width="100%" alt="" />
 </p>
