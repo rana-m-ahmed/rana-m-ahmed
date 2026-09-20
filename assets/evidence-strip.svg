@@ -6,7 +6,7 @@
 </style>
 <rect width="1200" height="172" class="bg"/><line x1="0" y1="1" x2="1200" y2="1" class="line"/><line x1="0" y1="171" x2="1200" y2="171" class="line"/><g class="line"><line x1="300" y1="22" x2="300" y2="150"/><line x1="600" y1="22" x2="600" y2="150"/><line x1="900" y1="22" x2="900" y2="150"/></g>
 <g class="mono muted" font-size="10" letter-spacing="2"><text x="48" y="38">APPLIED AI</text><text x="348" y="38">BACKEND</text><text x="648" y="38">PRODUCT</text><text x="948" y="38">DEPLOY</text></g>
-<g class="sans ink" font-weight="760"><text x="48" y="88" font-size="28">MODELS + AGENTS</text><text x="348" y="88" font-size="28">APIs + DATA</text><text x="648" y="88" font-size="28">WEB + MOBILE</text><text x="948" y="88" font-size="28">RUNTIME + QA</text></g>
+<g class="sans ink" font-weight="760"><text x="48" y="88" font-size="26">AI + AGENTS</text><text x="348" y="88" font-size="26">APIs + DATA</text><text x="648" y="88" font-size="26">WEB + MOBILE</text><text x="948" y="88" font-size="26">RUNTIME + QA</text></g>
 <g class="mono muted" font-size="11" letter-spacing="1"><text x="48" y="120">CV · RAG · EVALS · EDGE ML</text><text x="348" y="120">FASTAPI · POSTGRES · VECTOR SEARCH</text><text x="648" y="120">NEXT.JS · REACT · FLUTTER</text><text x="948" y="120">DOCKER · CI/CD · PLAYWRIGHT</text></g>
 <g class="accent"><rect x="48" y="139" width="28" height="3"/><rect x="348" y="139" width="28" height="3"/></g><g class="accent2"><rect x="648" y="139" width="28" height="3"/><rect x="948" y="139" width="28" height="3"/></g>
 </svg>
