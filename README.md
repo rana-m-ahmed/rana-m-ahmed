@@ -1,9 +1,13 @@
 <p align="center">
-  <img src="./assets/rma-signal.svg" alt="Rana Muhammad Ahmed — AI Systems Engineer and Researcher" width="100%" />
+  <img src="./assets/rma-signal.svg" alt="Rana Muhammad Ahmed — Applied AI and Software Engineer" width="100%" />
 </p>
 
 <p align="center">
-  I audit how AI systems fail, build ways to evaluate them, and carry models and agents into usable software.
+  <strong>I build AI-powered products end to end — from models, RAG and agent workflows to secure APIs, web/mobile interfaces and deployable runtimes.</strong>
+</p>
+
+<p align="center">
+  I like owning the whole path from idea to working system. My research background is the layer underneath: it shapes how I evaluate, test and harden what I ship.
 </p>
 
 <p align="center">
@@ -15,71 +19,76 @@
 </p>
 
 <p align="center">
-  <code>AI systems</code>&nbsp;&nbsp;<code>agent security</code>&nbsp;&nbsp;<code>edge ML</code>&nbsp;&nbsp;<code>computer vision</code>&nbsp;&nbsp;<code>full-stack AI</code>
+  <code>AI Engineer</code>&nbsp;&nbsp;<code>Applied ML</code>&nbsp;&nbsp;<code>Python / Backend</code>&nbsp;&nbsp;<code>Full-Stack AI</code>&nbsp;&nbsp;<code>Computer Vision / Edge</code>
 </p>
 
 <p align="center">
-  <img src="./assets/evidence-strip.svg" alt="Research and engineering evidence: two first-author preprints, 109107 benchmark images, 10200 agent execution records, and a 22.60 MiB executed edge runtime artifact" width="100%" />
+  <img src="./assets/evidence-strip.svg" alt="Engineering delivery stack across applied AI, backend systems, web and mobile product engineering, and deployment" width="100%" />
 </p>
 
-## Selected systems
+## What I can ship
 
-### 01 / [CropCop](https://github.com/rana-m-ahmed/ResearchWork-CropCop)
-
-**Auditable computer vision from benchmark reconstruction to an executed edge artifact.**
-
-CropCop starts with dataset forensics rather than a clean benchmark assumption: **117,546 source images** were audited, the inherited split was rejected after duplicate-family leakage was confirmed, and a **109,107-image / 120-class** benchmark was frozen with zero crossings among the audited trusted leakage groups. A compact MobileNetV4 lineage was then quantised and executed directly as a **22.60 MiB ExecuTorch/XNNPACK PTE**, retaining **98.46% internal-test accuracy**.
-
-`benchmark auditing` `PyTorch` `MobileNetV4` `PTQ` `ExecuTorch` `XNNPACK`
-
-[Paper](https://arxiv.org/abs/2608.25539) · [Code](https://github.com/rana-m-ahmed/ResearchWork-CropCop) · [Evidence chain](https://github.com/rana-m-ahmed/ResearchWork-CropCop#evidence-chain)
+- **AI features and systems** — RAG, agents, computer vision, inference pipelines, evaluation, prompt-injection defenses and edge ML.
+- **Backend infrastructure** — FastAPI services, PostgreSQL/Supabase, authentication, vector search, streaming APIs and model-serving workflows.
+- **Web and mobile products** — Next.js/React dashboards, Flutter applications, analytics surfaces and embedded AI experiences.
+- **Production engineering** — Docker, CI/CD, automated QA, Playwright/Vitest/pytest, deployment hardening and direct runtime validation.
 
 ---
 
-### 02 / [Labels Are Not Endpoints](https://github.com/rana-m-ahmed/ResearchWork-on-Mcp-Privilege-Aggregation)
+## Selected engineering
 
-**AI-agent security evaluation where the measurement itself became the object of audit.**
+### 01 / [Synapse](https://github.com/rana-m-ahmed/Synapse)
 
-The preserved campaign contained **10,200 deterministic execution records**. Auditing showed that the historical security endpoint used treatment information when deciding behavioral labels, so fixed behavior could receive a different class under treatment relabeling. The corrective work reconstructs treatment-blind outcomes from preserved execution evidence and introduces treatment-invariance and endpoint-integrity checks for the closed MCP-style campaign.
+**A multi-tenant RAG platform built as a complete AI product, not a notebook demo.**
 
-`AI security` `tool-using agents` `construct validity` `evaluation` `reproducibility`
+Synapse takes private documents from ingestion to deployed agent experience: chunking and embeddings feed **PostgreSQL + pgvector/HNSW** retrieval, **Supabase Auth** protects tenant data, **FastAPI** orchestrates inference, SSE streams responses, and a **Next.js** control plane manages agents, analytics and a one-line embeddable web component.
 
-[Paper](https://arxiv.org/abs/2608.12880) · [Code](https://github.com/rana-m-ahmed/ResearchWork-on-Mcp-Privilege-Aggregation)
+<code>FastAPI</code> <code>Next.js</code> <code>Supabase</code> <code>PostgreSQL</code> <code>pgvector</code> <code>RAG</code> <code>SSE</code>
 
----
-
-### 03 / [Synapse](https://github.com/rana-m-ahmed/Synapse)
-
-**Multi-tenant RAG platform for turning private documents into deployable AI support agents.**
-
-Document ingestion, chunking and embeddings feed **PostgreSQL + pgvector/HNSW** retrieval; **Supabase Auth** controls access; a **FastAPI** inference layer streams responses over SSE; and a **Next.js** control plane manages agents, analytics and a one-line embeddable web component.
-
-`FastAPI` `Next.js` `Supabase` `pgvector` `RAG` `SSE`
+[Repository](https://github.com/rana-m-ahmed/Synapse)
 
 ---
 
-### 04 / [Anti-LLM Injection Gateway](https://github.com/rana-m-ahmed/Anti-LLM-Injection-Gateway)
+### 02 / [ReadOut](https://github.com/rana-m-ahmed/ReadOut-B2B-Analytics-SaaS)
 
-**A pre-inference security layer that converts injection, PII and secret signals into explicit policy actions.**
+**Conversational analytics that turns uploaded business data into grounded visual answers.**
 
-The gateway combines **50+ weighted prompt-injection patterns**, encoding/structural checks, Microsoft Presidio plus custom secret recognizers, and an explainable **Block / Warn / Mask / Allow** policy engine behind a FastAPI service. Its QA suite covers detector, policy, API and responsive interaction behavior.
+ReadOut combines a **Next.js 16 / React 19** product surface with a **Python API** and Supabase-backed workflow. Users ask natural-language questions against their own datasets and receive schema-grounded analysis, visualisations and follow-up insight. The engineering stack includes static checks, **Vitest**, **Playwright** and **axe-core** accessibility validation.
 
-`FastAPI` `Presidio` `prompt injection` `PII` `policy enforcement` `Playwright`
+<code>Next.js</code> <code>React</code> <code>Python</code> <code>Supabase</code> <code>Analytics</code> <code>Playwright</code> <code>Accessibility</code>
+
+[Repository](https://github.com/rana-m-ahmed/ReadOut-B2B-Analytics-SaaS) · [Live demo](https://readoutanalytics.vercel.app/)
+
+---
+
+### 03 / [Anti-LLM Injection Gateway](https://github.com/rana-m-ahmed/Anti-LLM-Injection-Gateway)
+
+**A security layer for LLM applications that turns adversarial and sensitive-input signals into explicit runtime policy.**
+
+The gateway combines **50+ weighted prompt-injection patterns**, encoding and structural checks, Microsoft Presidio plus custom secret recognizers, and an explainable **Block / Warn / Mask / Allow** policy engine behind FastAPI. Its QA path covers detector, policy, API and responsive browser behavior.
+
+<code>FastAPI</code> <code>Presidio</code> <code>LLM Security</code> <code>PII</code> <code>Policy Enforcement</code> <code>Playwright</code>
+
+[Repository](https://github.com/rana-m-ahmed/Anti-LLM-Injection-Gateway) · [Related research](https://arxiv.org/abs/2608.12880)
+
+---
+
+### 04 / [CropCop](https://github.com/rana-m-ahmed/ResearchWork-CropCop)
+
+**A 120-class computer-vision pipeline carried from data engineering and model evaluation into an executed edge runtime.**
+
+CropCop moves through the full ML delivery chain: **117,546 source images audited**, a **109,107-image / 120-class** frozen benchmark, a compact MobileNetV4 lineage, validation-only post-training quantisation, and direct execution as a **22.60 MiB ExecuTorch/XNNPACK PTE** with **98.46% internal-test accuracy**.
+
+<code>PyTorch</code> <code>Computer Vision</code> <code>MobileNetV4</code> <code>PTQ</code> <code>ExecuTorch</code> <code>XNNPACK</code> <code>Edge AI</code>
+
+[Repository](https://github.com/rana-m-ahmed/ResearchWork-CropCop) · [Paper](https://arxiv.org/abs/2608.25539) · [Evidence chain](https://github.com/rana-m-ahmed/ResearchWork-CropCop#evidence-chain)
 
 ---
 
 ## More things I've built
 
 <details>
-  <summary><strong>ReadOut</strong> — conversational B2B analytics · <code>Next.js</code> <code>Python</code> <code>Supabase</code></summary>
-
-  Ask natural-language questions over uploaded datasets and receive grounded visual answers. The project includes schema-constrained analysis, a Python API, Next.js 16/React 19, Playwright/Vitest testing and axe-core accessibility checks.
-
-  [Repository](https://github.com/rana-m-ahmed/ReadOut-B2B-Analytics-SaaS) · [Live demo](https://readoutanalytics.vercel.app/)
-</details>
-
-<details>
-  <summary><strong>OrthoLens</strong> — explainable fracture-analysis prototype · <code>DenseNet121</code> <code>Grad-CAM</code> <code>Docker</code></summary>
+  <summary><strong>OrthoLens</strong> — explainable medical-imaging prototype · <code>DenseNet121</code> <code>Grad-CAM</code> <code>Docker</code> <code>Next.js</code></summary>
 
   DenseNet121 inference with structured probabilities and Grad-CAM visual explanations behind a thread-safe backend and a separate Next.js review interface. Development reference metrics include **0.9813 test AUC**; the project explicitly does not claim clinical validity.
 
@@ -89,13 +98,13 @@ The gateway combines **50+ weighted prompt-injection patterns**, encoding/struct
 <details>
   <summary><strong>Haul</strong> — mobile commerce with visual search · <code>Flutter</code> <code>FastAPI</code> <code>Firebase</code> <code>Stripe</code></summary>
 
-  Android-first marketplace work spanning product discovery, recommendation/visual-search flows, resilient client state, backend services and server-authoritative Stripe test checkout.
+  Android-first marketplace work spanning product discovery, recommendation and visual-search flows, resilient client state, backend services and server-authoritative Stripe test checkout.
 
   [Repository](https://github.com/rana-m-ahmed/Haul-Ecommerce-Marketplace)
 </details>
 
 <details>
-  <summary><strong>AIDRA</strong> — hybrid AI disaster-response system · <code>A*</code> <code>CSP</code> <code>ML</code> <code>fuzzy logic</code></summary>
+  <summary><strong>AIDRA</strong> — hybrid AI disaster-response system · <code>A*</code> <code>CSP</code> <code>ML</code> <code>Socket.IO</code></summary>
 
   A real-time rescue simulation combining risk-aware A*, constraint allocation with MRV/forward checking, survival prediction, fuzzy urgency scoring and a Flask + Socket.IO command surface.
 
@@ -113,69 +122,77 @@ The gateway combines **50+ weighted prompt-injection patterns**, encoding/struct
 <details>
   <summary><strong>TPU Systolic Array Visualizer</strong> — cycle-by-cycle architecture simulation · <code>React</code> <code>TypeScript</code> <code>Vite</code></summary>
 
-  An interactive browser-side simulator for understanding TPU-style systolic matrix multiplication, with architecture references, timeline controls, reduced-motion support and automated validation.
+  An interactive browser-side simulator for TPU-style systolic matrix multiplication, with architecture references, timeline controls, reduced-motion support and automated validation.
 
   [Repository](https://github.com/rana-m-ahmed/TPU-Systolic-Array-Visualizer)
 </details>
 
 ---
 
-## Research index
-
-**R01 — [Labels Are Not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation](https://arxiv.org/abs/2608.12880)**  
-Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
-A campaign-bounded audit of treatment-contaminated security endpoints in tool-using agents, with treatment-blind reconstruction and endpoint-integrity controls.
-
-**R02 — [CropCop: An Auditable 120-Class Plant-Health Model from Benchmark Reconstruction to a Quantised Runtime Artifact](https://arxiv.org/abs/2608.25539)**  
-Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
-A connected evidence chain spanning leakage-aware dataset reconstruction, compact-model evaluation, validation-only quantisation and direct execution of the serialized runtime artifact.
-
----
-
-## Capabilities
-
-| Domain | What I work with |
-|---|---|
-| **AI / ML** | PyTorch · TensorFlow/Keras · Hugging Face · scikit-learn · OpenCV · transfer learning · calibration · PTQ · ExecuTorch/XNNPACK |
-| **Agents / AI security** | RAG · vector retrieval · tool-use analysis · prompt-injection evaluation · policy enforcement · PII/secret detection · endpoint integrity |
-| **Product engineering** | FastAPI · Next.js · React · Flutter · PostgreSQL · Supabase · Firebase · REST APIs · streaming interfaces |
-| **Engineering / systems** | Python · C++ · TypeScript/JavaScript · Dart · SQL · Docker · Linux · Git/GitHub · CI/CD · pytest · Playwright · Vitest |
-
----
-
-## Experience
+## Industry experience
 
 **2026 — now · Pakistan Telecommunication Authority (PTA), Headquarters**  
-ICT Intern — Enterprise ICT, AI, Governance & DevOps. Working around reliability, governance, auditability, data handling and production practices for enterprise/public-sector systems.
+**ICT Intern — Enterprise ICT, AI, Governance & DevOps**  
+Working around reliability, auditability, data handling, AI governance and the DevOps/change-management practices required to move enterprise and public-sector systems into resilient production environments.
 
 **2026 · EaseZen Solutions**  
-AI/ML Intern. Worked across dataset preparation, model training/evaluation, error analysis and reusable ML engineering workflows.
+**AI/ML Intern**  
+Worked across dataset preparation, model training and evaluation, error analysis, and the conversion of experimental workflows into reusable engineering pipelines.
 
 ---
 
-## Education / problem solving
+## Engineering toolkit
+
+| Area | Stack |
+|---|---|
+| **Applied AI / ML** | Python · PyTorch · TensorFlow/Keras · Hugging Face · OpenCV · scikit-learn · RAG · agents · embeddings · computer vision · PTQ · ExecuTorch |
+| **Backend / data** | FastAPI · PostgreSQL · Supabase · Firebase · REST APIs · Auth · SSE · pgvector/HNSW · vector search |
+| **Web / mobile** | TypeScript/JavaScript · Next.js · React · Flutter · Dart · Tailwind CSS |
+| **Engineering / systems** | C++ · Docker · Linux · Git/GitHub · CI/CD · pytest · Playwright · Vitest · algorithms · data structures |
+
+---
+
+## Research depth
+
+Research is not the destination of this profile; it is an engineering advantage. I use it to make stronger decisions around evaluation, reproducibility, failure analysis, security and model/runtime evidence.
+
+**[Labels Are Not Endpoints: Treatment Leakage and Construct Validity in MCP Agent Security Evaluation](https://arxiv.org/abs/2608.12880)**  
+Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
+Audits treatment-contaminated behavioral endpoints in a closed MCP-style agent-security campaign and reconstructs treatment-blind outcomes from preserved execution evidence.
+
+**[CropCop: An Auditable 120-Class Plant-Health Model from Benchmark Reconstruction to a Quantised Runtime Artifact](https://arxiv.org/abs/2608.25539)**  
+Rana Muhammad Ahmed, Sabahat Abbas · arXiv preprint · 2026  
+Connects leakage-aware dataset reconstruction, compact-model evaluation, post-training quantisation and direct execution of the serialized runtime artifact.
+
+---
+
+## Education, problem solving & leadership
 
 **B.S. Computer Science — Bahria University Islamabad**  
-Expected Dec 2027 · **CGPA 3.89 / 4.00** · Rector's Honour List · University Merit Scholar · Orange Tree Foundation Scholar
+Expected Dec 2027 · **CGPA 3.89 / 4.00** · ranked **#1 in the Spring 2024 cohort** · Rector's Honour List · University Merit Scholar · Orange Tree Foundation Scholar
 
-**The Pull Pirates — Founder & Captain**  
+**Founder & Captain — The Pull Pirates**  
 Competitive-programming team representing Bahria University at ICPC and national contests; represented the university at **ICPC Asia Topi Regional 2025**.
 
 **BU GlobalX Student Ambassador**  
-Supporting student access to international academic, STEM and professional opportunities.
+Selected among the university's student ambassadors supporting international academic, STEM and professional engagement.
 
 ---
 
-## Current signal
+## Available for engineering work
 
-**Open to select remote part-time / contract work** where research rigor and practical engineering meet — especially AI systems, applied ML, agent infrastructure, AI security/evaluation and full-stack AI products.
+**Open to paid remote part-time, contract and high-impact internship opportunities.**
 
-`UTC+05` · `remote` · `part-time / contract`
+I am most useful where a team needs someone who can move across the stack rather than stop at a model or mockup:
+
+<code>AI Engineer</code> · <code>Applied AI / ML</code> · <code>Full-Stack AI</code> · <code>Python / Backend</code> · <code>Computer Vision / Edge AI</code>
+
+**Availability:** ~15–20 hours/week · **Location:** Islamabad, Pakistan · **Timezone:** UTC+05
 
 **Reach me:** [ranamuhammadahmed6@gmail.com](mailto:ranamuhammadahmed6@gmail.com) · [LinkedIn](https://linkedin.com/in/rana-muhammad-ahmed-571057295)
 
 ---
 
 <p align="center">
-  <sub>RMA / SIGNAL-EVIDENCE · build systems that survive contact with reality.</sub>
+  <sub>RMA / MODEL → API → PRODUCT → SHIP</sub>
 </p>
