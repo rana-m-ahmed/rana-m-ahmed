@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Rana Muhammad Ahmed — AI Systems Engineer and Researcher</title>
+  <desc id="desc">Editorial technical profile banner showing an audit, evaluate, build, deploy signal network.</desc>
+  <style>
+    .bg{fill:#070b10}.ink{fill:#eef3f8}.muted{fill:#93a1b2}.grid{stroke:#172231}.accent{fill:#61a8ff}.accent2{fill:#61ded2}.warm{fill:#f3c969}
+    .sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace}
+    .edge{stroke:#172231;stroke-width:1.4;fill:none}.node{fill:#070b10;stroke:#61a8ff;stroke-width:1.6}.node2{fill:#070b10;stroke:#61ded2;stroke-width:1.6}
+    @media (prefers-color-scheme: light){.bg{fill:#f4f1ea}.ink{fill:#111418}.muted{fill:#5f6670}.grid{stroke:#d9d4ca}.accent{fill:#0759d1}.accent2{fill:#087c7a}.warm{fill:#8b5e00}.edge{stroke:#d9d4ca}.node{fill:#f4f1ea;stroke:#0759d1}.node2{fill:#f4f1ea;stroke:#087c7a}}
+    @media (prefers-reduced-motion: reduce){.motion,.pulse,.scan{display:none}}
+  </style>
+  <defs>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <pattern id="gridPattern" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#172231" stroke-width="0.6" opacity=".55"/></pattern>
+    <linearGradient id="scanFade" x1="0" x2="1"><stop offset="0" stop-color="#61a8ff" stop-opacity="0"/><stop offset=".5" stop-color="#61a8ff" stop-opacity=".08"/><stop offset="1" stop-color="#61a8ff" stop-opacity="0"/></linearGradient>
+    <path id="e1" d="M750 116 C815 80 850 82 918 116"/><path id="e2" d="M750 116 C780 185 795 220 836 258"/><path id="e3" d="M918 116 C900 178 881 221 836 258"/><path id="e4" d="M918 116 C990 132 1030 168 1065 220"/><path id="e5" d="M836 258 C910 278 975 270 1065 220"/>
+  </defs>
+  <rect width="1200" height="420" class="bg"/><rect width="1200" height="420" fill="url(#gridPattern)" opacity=".7"/><rect x="0" y="0" width="1200" height="7" class="accent"/>
+  <g class="scan" opacity=".8"><rect x="610" y="-90" width="590" height="90" fill="url(#scanFade)"><animate attributeName="y" values="-90;420;-90" dur="16s" repeatCount="indefinite"/></rect></g>
+  <g class="mono muted" font-size="11" letter-spacing="2.4"><text x="66" y="42">RMA / PROFILE / 2026</text><text x="1134" y="42" text-anchor="end">ISLAMABAD · UTC+05</text></g>
+  <g class="sans ink"><text x="66" y="128" font-size="67" font-weight="800" letter-spacing="-2.8">RANA</text><text x="66" y="191" font-size="67" font-weight="800" letter-spacing="-2.8">MUHAMMAD</text><text x="66" y="254" font-size="67" font-weight="800" letter-spacing="-2.8">AHMED</text></g>
+  <text x="70" y="296" class="sans accent" font-size="18" font-weight="650">AI SYSTEMS ENGINEER + RESEARCHER</text>
+  <g class="mono muted" font-size="12" letter-spacing="1.3"><text x="70" y="336">RELIABLE AI · AGENT SECURITY · EDGE ML · PRODUCT SYSTEMS</text><text x="70" y="362">RESEARCH / EVIDENCE / ENGINEERING / RUNTIME</text></g>
+  <line x1="610" y1="72" x2="610" y2="366" class="grid" stroke-width="1"/>
+  <g class="edge"><use href="#e1"/><use href="#e2"/><use href="#e3"/><use href="#e4"/><use href="#e5"/></g>
+  <g class="mono" font-size="11" letter-spacing="1.6"><circle class="node" cx="750" cy="116" r="34"/><text x="750" y="120" text-anchor="middle" class="ink">AUDIT</text><circle class="node" cx="918" cy="116" r="38"/><text x="918" y="120" text-anchor="middle" class="ink">EVALUATE</text><circle class="node2" cx="836" cy="258" r="34"/><text x="836" y="262" text-anchor="middle" class="ink">BUILD</text><circle class="node2" cx="1065" cy="220" r="38"/><text x="1065" y="224" text-anchor="middle" class="ink">DEPLOY</text><circle cx="918" cy="116" r="5" class="warm pulse"><animate attributeName="r" values="4;7;4" dur="3.1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".55;1;.55" dur="3.1s" repeatCount="indefinite"/></circle></g>
+  <g class="motion" filter="url(#glow)"><circle r="4" class="accent" opacity="0"><animateMotion dur="3.0s" begin="0s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="3s" repeatCount="indefinite"/></circle><circle r="4" class="accent2" opacity="0"><animateMotion dur="4.2s" begin=".8s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="4.2s" begin=".8s" repeatCount="indefinite"/></circle><circle r="4" class="accent" opacity="0"><animateMotion dur="3.6s" begin="1.4s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="3.6s" begin="1.4s" repeatCount="indefinite"/></circle><circle r="4" class="warm" opacity="0"><animateMotion dur="4.8s" begin=".4s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="4.8s" begin=".4s" repeatCount="indefinite"/></circle><circle r="4" class="accent2" opacity="0"><animateMotion dur="3.9s" begin="2.1s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="3.9s" begin="2.1s" repeatCount="indefinite"/></circle></g>
+  <g class="mono muted" font-size="10.5" letter-spacing="1.5"><text x="665" y="338">SIGNAL / EVIDENCE</text><text x="665" y="358">SYSTEMS THAT SURVIVE CONTACT WITH REALITY</text></g>
+  <g class="mono accent2" font-size="10.5" letter-spacing="1.3"><circle cx="1048" cy="341" r="4" class="accent2 pulse"><animate attributeName="opacity" values=".35;1;.35" dur="2.2s" repeatCount="indefinite"/></circle><text x="1061" y="345">BUILDING</text></g>
+</svg>
