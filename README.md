@@ -131,13 +131,23 @@ CropCop moves through the full ML delivery chain: **117,546 source images audite
 
 ## Industry experience
 
-**Aug–Sep 2026 · Pakistan Telecommunication Authority (PTA), Headquarters**  
-**ICT Intern — Enterprise ICT, AI, Governance & DevOps**  
-Completed an ICT internship focused on how large-scale telecom and public-sector systems are operated reliably: enterprise AI governance, auditability, data handling, DevOps, CI/CD and change-management practices for production environments.
+### Pakistan Telecommunication Authority (PTA), Headquarters
+**ICT Intern — Enterprise ICT, AI, Governance & DevOps** · *Aug–Sep 2026 · Islamabad, Pakistan*
 
-**Jan–Mar 2026 · EaseZen Solutions**  
-**AI/ML Intern**  
-Worked across dataset preparation, model training and evaluation, error analysis, and the conversion of experimental workflows into reusable engineering pipelines.
+Worked under senior PTA officers to understand how national-scale telecom and public-sector ICT services are kept reliable, secure and governable in regulated environments.
+
+- Examined enterprise-AI and agentic-system requirements around **data handling, auditability, human oversight and operational governance**.
+- Reviewed **DevOps, CI/CD, change-management and reliability practices** used to move systems from development into controlled production environments.
+- Built practical exposure to the engineering constraints that appear at **government and enterprise scale**, where resilience, accountability and traceability matter alongside functionality.
+
+### EaseZen Solutions
+**AI/ML Intern** · *Jan–Mar 2026*
+
+Worked across the applied ML lifecycle with an emphasis on making experimental work reproducible and usable beyond a single notebook.
+
+- Prepared and cleaned datasets for model-development workflows.
+- Supported **training, evaluation, error analysis and iteration** across applied ML tasks.
+- Helped convert exploratory notebooks into **reusable, documented engineering workflows**.
 
 ---
 
@@ -170,16 +180,43 @@ An isolated, fail-closed clean reimplementation for studying adversarial-amnesia
 
 ---
 
-## Education, problem solving & leadership
+## Education & recognition
 
-**B.S. Computer Science — Bahria University Islamabad**  
-Expected Dec 2027 · **CGPA 3.89 / 4.00** · ranked **#1 in the Spring 2024 cohort** · Rector's Honour List · University Merit Scholar · Orange Tree Foundation Scholar
+### B.S. Computer Science — Bahria University Islamabad Campus
+*Spring 2024 — Expected Dec 2027*
 
-**Founder & Captain — The Pull Pirates**  
-Competitive-programming team representing Bahria University at ICPC and national contests; represented the university at **ICPC Asia Topi Regional 2025**.
+**CGPA: 3.89 / 4.00** · **Ranked #1 in the Spring 2024 BSCS cohort**
 
-**BU GlobalX Student Ambassador**  
-Selected among the university's student ambassadors supporting international academic, STEM and professional engagement.
+- **Rector's Honour List**
+- **University Merit Scholar**
+- **Orange Tree Foundation Scholar**
+- Coursework spanning **Artificial Intelligence, Data Structures & Algorithms, Database Systems, Computer Networks, Software Engineering and Linear Algebra**
+
+### Academic signal
+
+<code>3.89 / 4.00 CGPA</code> · <code>#1 cohort rank</code> · <code>Merit scholarship</code> · <code>Need-based scholarship</code> · <code>Honour List</code>
+
+---
+
+## Leadership, competition & community
+
+### The Pull Pirates — Founder & Captain
+*Sep 2024 — Present*
+
+Founded and lead a competitive-programming team representing Bahria University across ICPC and national contests. Cleared internal selection/preliminary stages and represented the university at the **ICPC Asia Topi Regional 2025**.
+
+<code>C++</code> <code>Algorithms</code> <code>Problem Solving</code> <code>Team Leadership</code>
+
+### BU GlobalX Student Ambassador
+*Feb 2026 — Present*
+
+Selected as **one of 14 university ambassadors**, supporting STEM outreach, international engagement and student participation in global academic and professional opportunities, including peer-facing workshops and campus initiatives.
+
+### Community, accessibility & sport
+
+- Contributed to university **community-service and Iftar-drive initiatives**, including work with **Noreen Zindagi Welfare Trust**.
+- Built a **text-to-speech accessibility tool** aimed at improving access for users with visual impairments and reading difficulties.
+- Participated in **badminton and cricket** at inter-university events including **NUST Olympiad** and **NESCON**.
 
 ---
 
