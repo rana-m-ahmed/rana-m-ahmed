@@ -15,7 +15,7 @@
   &nbsp;·&nbsp;
   <a href="https://linkedin.com/in/rana-muhammad-ahmed-571057295">LinkedIn</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/rana-m-ahmed">GitHub</a>
+  <a href="https://scholar.google.com/citations?user=st29ph8AAAAJ&hl=en">Google Scholars</a>
 </p>
 
 <p align="center">
