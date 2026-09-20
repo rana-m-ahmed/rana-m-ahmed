@@ -141,13 +141,15 @@ Worked under senior PTA officers to understand how national-scale telecom and pu
 - Built practical exposure to the engineering constraints that appear at **government and enterprise scale**, where resilience, accountability and traceability matter alongside functionality.
 
 ### EaseZen Solutions
-**AI/ML Intern** · *Jan–Mar 2026*
+**AI/ML Intern** · *Jan–Mar 2026*  
+<code>Applied ML</code> <code>Model Evaluation</code> <code>Error Analysis</code> <code>Workflow Engineering</code>
 
-Worked across the applied ML lifecycle with an emphasis on making experimental work reproducible and usable beyond a single notebook.
+Worked across the model-development loop rather than a single isolated task, with a focus on making ML experiments easier to evaluate, reproduce and hand off.
 
-- Prepared and cleaned datasets for model-development workflows.
-- Supported **training, evaluation, error analysis and iteration** across applied ML tasks.
-- Helped convert exploratory notebooks into **reusable, documented engineering workflows**.
+- Prepared and cleaned datasets for training/evaluation workflows, helping turn raw inputs into consistent model-ready data.
+- Supported **model training, validation and comparative evaluation**, then used error analysis to identify failure patterns and guide the next iteration.
+- Helped move work beyond one-off notebooks by separating repeatable preprocessing, training and evaluation steps into **clearer reusable workflows**.
+- Strengthened **reproducibility and engineering handoff** through documented experiment structure, consistent evaluation practice and reusable pipeline components.
 
 ---
 
